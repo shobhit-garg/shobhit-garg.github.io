@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "Cookies"
+date:   2015-01-22
+categories: blog
+tags: [web,general]
+author: shobhit_garg
+share: true
+comments: true
+excerpt:
+---
+
+Cookie is a peice of data sent from website and it is stored in web browser.It is used to store information basically related to user like user id,his cart id sometimes it's password etc.You can check the cookies data through web browser.Like in chrome do right click and go to  Inspect Element-> Resouces -> Cookies.
+
+In cookies data is stored in form of key value pair with some extra attributes.Like if you want to store user_id(50) id cookies string 'user_id' can be the key and 50 can be the value.There are other attributes which are:
+
+* __Expiry Date:__ By default it's session(cookie gets deleted when user closes the browser).You can set the cookie which is good for many years.
+
+* __Path:__ Like if you are giving path ../abc , cookies would be shared to ../abc and it's child paths like ../abc, ../abc/def.Important point here is it is not secured,a path can access  other's path cookies just using javascript tweaks. 
+
+* __Domain:__ Domain the cookie is good for.If you don't provide the domain then it sets the domain you are working on automatically.
+
+* __Secure:__ Need for a secure connection(https) to use the cookie.Cookies can only br transferred to secured connection.By default it's false.
+
+* __HTTP:__ Whether this cookie is accessible via scripting or only HTTP,true means it can be accessible only through http(not with js like document.cookies)
+
+__Important Points to remember:__
+
+
+1. Cookies can't be shared among multiple domains.Like abc.com and xyz.com can't share cookies.
+
+2. A domain can not set a cookie for a specific subdomain.(like abc.com can't set a cookie for xyz.abc.com)
+
+3. Subdomain can access the cookies of domain.(abc.xyz.com can access the cookie of xyz.com but for this you have to mention this in cookie domain attribute.)
+
+4. Domain can't access the cookie set by subdomain with domain attribute as subdomain.(abc.com can't access the cookie set by xyz.abc.com)
+
+5. Subdomain can set cookie for domain.(like xyz.abc.com can set a cookie for domain abc.com with domain attribute as abc.com)
