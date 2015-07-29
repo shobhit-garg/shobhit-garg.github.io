@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "oauth2"
+title:  "Oauth2"
 date:   2015-02-27
 categories: blog
 tags: [web,general,authentication,security]

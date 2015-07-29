@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "jquery-file-upload"
+title:  "JQuery-File-Upload"
 date:   2015-01-15
 categories: blog
 tags: [jquery] 
