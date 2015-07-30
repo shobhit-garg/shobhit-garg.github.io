@@ -3,7 +3,7 @@ layout: post
 title:  "Blocks,Lambda and Procs in Ruby"
 date:   2015-07-25
 categories: blog
-tags: [rubyonrails]
+tags: [rubyonrails,ruby]
 author: shobhit_garg
 share: true
 comments: true

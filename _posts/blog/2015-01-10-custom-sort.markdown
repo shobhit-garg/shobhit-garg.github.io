@@ -3,7 +3,7 @@ layout: post
 title:  "Custom Sorting in Ruby"
 date:   2015-01-10
 categories: blog
-tags: [rubyonrails]
+tags: [rubyonrails,ruby]
 author: shobhit_garg
 share: true
 comments: true
