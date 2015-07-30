@@ -16,6 +16,6 @@ My name is Shobhit Garg. I live in India. I am a Computer Science Graduate. Afte
 
 
 I like reading geek stuff, working on new technologies.Sometimes I do some competitive programming too.My strong areas include Java,Rails,Algorithms,Data Structures and Web Technology.Apart from all this geeky stuff, i like playing foosball and TT and watching movies.
-Get in touch with me at  __garg.shobhit1@gmail.com__ .
+Get in touch with me at  __garg.geekdirt@gmail.com__ .
 
 Your queries, feedback and suggestions are welcome.
