@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title: Site Title
+title: Geek Dirt
 locale: en_US
 description: Happy to help!
 logo: applelogo.jpg
@@ -34,7 +34,7 @@ owner:
   name: Shobhit Garg
   avatar: shobhit_pic.jpg
   email: garg.shobhit1@gmail.com
-  disqus-shortname: shobhitblog
+  disqus-shortname: geekdirt
   twitter: #username
   facebook: shobhit4u
   github: shobhit-garg
