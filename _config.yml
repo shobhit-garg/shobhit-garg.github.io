@@ -5,7 +5,7 @@ locale: en_US
 description: Happy to help!
 logo: applelogo.jpg
 search: true
-url: http://shobhit-garg.github.io
+url: http://www.geekdirt.com
 
 # Jekyll configuration
 
@@ -34,7 +34,7 @@ owner:
   name: Shobhit Garg
   avatar: shobhit_pic.jpg
   email: garg.shobhit1@gmail.com
-  disqus-shortname: geekydirt
+  disqus-shortname: geekdirt
   twitter: #username
   facebook: shobhit4u
   github: shobhit-garg
