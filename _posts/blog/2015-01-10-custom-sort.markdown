@@ -34,7 +34,7 @@ Output : [[2, 1, 7], [3, 2, 8], [1, 4, 3]]
 {% endhighlight %}
 
 
-Here x,y are the elements of arrays like [[1,4,3]](a element of array) and using x[1] and y[1] we are comparing the middle elements.Now lets look at opeartor <=> :
+Here x,y are the elements of arrays like '[1,4,3]' (a element of array) and using x[1] and y[1] we are comparing the middle elements.Now lets look at opeartor <=> :
 
 {% highlight ruby %}
 2 <=> 5 # return -1 because 2 is smaller than 5
