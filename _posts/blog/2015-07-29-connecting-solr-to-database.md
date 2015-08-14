@@ -184,10 +184,10 @@ http://localhost:8983/solr/dihexample/dataimport?command=full-import
 
 {% endhighlight %}
 
+For indexing Solr please read : [Indexing in solr using json and rest apis][solr-indexing]
 
 
-
-
+[solr-indexing]:     {{ site.url }}/indexing-in-solr-using-json-and-rest-apis
 [mysql-connector]:    http://dev.mysql.com/downloads/connector/j/
 [dih-wiki]:     https://wiki.apache.org/solr/DataImportHandler
 
