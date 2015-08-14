@@ -13,6 +13,8 @@ excerpt:
 
 You can post your documents in solr to index in many ways. XML,JSON,CSV are all the supported formats.Apart from this you can directly link solr to database using DataImportHandler, and execute fullImport to index all the data. As use of JSON and RESTful apis are rising day by day so i thought to update the solr using both of them.
 
+For connectiong Solr to database read : [Connecting Solr to database][connecting-solr-db]
+
 For calling rest-apis , i am using ruby gem [rest-client][rest-client]. You can use any tool or native methods.
 
 
@@ -186,3 +188,4 @@ For more information , visit [Official Wiki][solr-update-wiki] .
 
 [rest-client]:   https://github.com/rest-client/rest-client
 [solr-update-wiki]:  https://cwiki.apache.org/confluence/display/solr/Uploading+Data+with+Index+Handlers
+[connecting-solr-db]: {{ site.url }}/blog/connecting-solr-to-database
