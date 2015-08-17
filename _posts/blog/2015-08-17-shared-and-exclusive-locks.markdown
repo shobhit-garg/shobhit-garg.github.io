@@ -99,6 +99,7 @@ Intention exclusive (IX): Allows requestor to explicitly lock rows in X, S, IX o
 __FOR UPDATE & LOCK IN SHARE MODE in mysql__
 
 select .. from .. where .. FOR UPDATE
+
 select .. from .. where .. LOCK IN SHARE MODE
 
 The whole target of this post is to let you know about these two things. Both of these are used with select query.
