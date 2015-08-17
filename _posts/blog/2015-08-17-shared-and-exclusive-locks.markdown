@@ -14,7 +14,7 @@ I am assuming you have gone through [transactions and locks][transactions-and-lo
 
 Before starting this , let's discuss an example simple database transaction:
 
-### Case:Supppose there are two sessions which are trying to add a discount of 1000 of order value is greater than 4500.
+__Case:Supppose there are two sessions which are trying to add a discount of 1000 of order value is greater than 4500.__
 
 
 <%highlight ruby%>
@@ -47,7 +47,7 @@ mysql1 > commit
 
 mysql2 > commit
 
-<%end hignlight%>
+<%endhignlight%>
 
 
 After completion of this if you try to check the state of database, you will get `dirty data` .
@@ -55,7 +55,7 @@ After completion of this if you try to check the state of database, you will get
 <% highlight ruby %>
 mysql1 > select order_value,discount from orders where id = 21548;
 #3000,2000
-<% end highlight %>
+<% endhighlight %>
 
 Only a discount of 1000 should be given but in this case you end up giving 2000 discount. That means only __transaction is not the solution of every problem__. Now the question arrives is how to make this thread safe ? The answer is locking.
 
@@ -115,7 +115,7 @@ mysql1 > select * from orders where id = 21548 FOR UPDATE;
 mysql2 > update orders set order_value = 1000 where id = 21548;
 #Works becuase there is no lock applied in connection1.
 
-<% end highlight %>
+<% endhighlight %>
 
 
 <% highlight ruby %>
@@ -133,7 +133,7 @@ mysql2 > update orders set order_value = 1000 where id = 21549;
 mysql2 > select * from orders where id = 21548 FOR UPDATE; 
 #waiting for lock which is acquired by connection1 on row with id 21548 
 
-<% end highlight %>
+<% endhighlight %>
 
 <% highlight ruby %>
 
@@ -145,7 +145,7 @@ mysql2 > start transaction
 mysql2 > select * from orders where id = 21548 FOR UPDATE; #waiting
 #waiting for lock which is acquired by connection1 on row with id 21548 
 
-<% end highlight %>
+<% endhighlight %>
 
 <% highlight ruby %>
 
@@ -159,7 +159,7 @@ mysql2 > update orders set order_value = 1000 where id = 21548;
 #waiting for lock which is acquired by connection1 on row with id 21548 
 
 
-<% end highlight %>
+<% endhighlight %>
 
 
 <% highlight ruby %>
@@ -173,7 +173,7 @@ mysql2 > select * from custom_orders where id = 21548 FOR UPDATE;
 #waiting for lock which is acquired by connection1 on row with id 21548 
 #This is asking for X lock but can't be given as connection1 has S lock on the same row.
 
-<% end highlight %>
+<% endhighlight %>
 
 
 
@@ -189,12 +189,12 @@ mysql1 > update orders set order_value = 1000 where id = 21548;
 mysql2 > select * from orders where id = 21548 LOCK IN SHARE MODE;
 #waiting for the lock acquired by connection1 on the same row. 
 
-<% end highlight %>
+<% endhighlight %>
 
 For any doubts please check this question on [Stack Overflow][is-ix-lock-question] .
 
 [is-ix-lock-question]: http://stackoverflow.com/questions/31880185/how-locks-s-x-is-ix-work-in-mysql-with-queries-like-for-update-lock-in-share-m
-[transactions-and-locks] : {{site.url}}/blog/transaction-and-locks-in-mysql/
+[transactions-and-locks]: {{site.url}}/blog/transaction-and-locks-in-mysql/
 
 
 
