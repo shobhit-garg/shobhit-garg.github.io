@@ -48,7 +48,7 @@ Metric using which you can measure the performance.For example:-
 Suppose for a ecommere site strategy is "sell products"  and the tactic is to "Sell online" and "Drive Store visit".The KPI for "sell online" tactic is revenue, average order value etc. The KPI for "Drive Store visit" tactic is "find store location" pageviews, "print coupan page" pageviews etc.You should have separate KPIs for each marketing channel.
 
 
-__Frequency and Recency: __
+__Frequency and Recency:__
 
 Frequency is how often users come in the time period you select.And recency is how many days pass between one visit and the next.
 So you want high frequency and low recency.You if your site has high frequency and high recency that means good no. of users are coming to your website but they are losing interest.If you have low frequency and low recency that means particular set of users are coming to your website and they are very consistent.
