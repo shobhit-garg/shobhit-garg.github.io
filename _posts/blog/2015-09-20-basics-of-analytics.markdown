@@ -51,7 +51,7 @@ Suppose for a ecommere site strategy is "sell products"  and the tactic is to "S
 __Frequency and Recency:__
 
 Frequency is how often users come in the time period you select.And recency is how many days pass between one visit and the next.
-So you want high frequency and low recency.You if your site has high frequency and high recency that means good no. of users are coming to your website but they are losing interest.If you have low frequency and low recency that means particular set of users are coming to your website and they are very consistent.
+So you want high frequency and low recency.If your site has high frequency and high recency that means good no. of users are coming to your website but they are losing interest.If you have low frequency and low recency that means particular set of users are coming to your website and they are very consistent.
 
 
 __Conversion__:
