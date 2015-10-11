@@ -20,20 +20,23 @@ There are bascially 4-5 types of reports in google analytics:
 
 __Real Time:__ As the name infers, it display information like how many users are currently visiting the site, what are their location etc. 
 
-![]({{ site.url }}/assets/real-time.png)
+![Real Time Report]({{ site.url }}/assets/real-time.png)
 *Real Time Report*
 
 __Audience:__ Who your users are? It tells about your users demographics , locations, browser/mobile they are using etc. Information like how many of them are first time and how many of them are returning is also the part of this.
 
 ![Audience Report]({{ site.url }}/assets/audience.png)
+*Audience Report*
 
 __Acquisition:__ How users arrive at your web site? Like users are coming from which sources/medium, on which pages they are landing , what are their flow. If they are coming through some adwords or campaign then information about this too.
 
 ![Acquisition Report]({{ site.url }}/assets/acquisition.png)
+*Acquisition Report*
 
 __Behavior:__ How users interact with your site or app? Like total number of pages seen per session, the order in which screens are viewed,  how long a typical session lasts.	
 
 ![Behavior Report]({{ site.url }}/assets/behavior.png)
+*Behavior Report*
 
 __Conversions:__ It's for goals and ecommerce about which i would be discussing in some other post.
 
@@ -46,11 +49,12 @@ You can create an `account` on google analytics.There can be multiple `property`
 In each property there can be multiple `views`.Views are nothing but filtered results.Default view is 'All website data' for web.You can create other views like in which you can filter requests from some particular host, particular ISP , particular country etc. So like for a property we can have views like All Website Data , US Data, Europe Data , Asia data. So that you can analyze them separetly. Data starts populating for a view as you create it, means when you create a view it doesn't fetch data from other views.
 
 ![Account, Property and Views]({{ site.url }}/assets/views.jpg)
+*Account, Property and Views*
 
 A Segment is a subset of your Analytics data. For example, of your entire set of users, one Segment might be users from a particular country or city. Another Segment might be users who purchase a particular line of products or who visit a specific part of your site. Maximum four segments can be there in a view at a time.
 
 ![Segments]({{ site.url }}/assets/segment.jpg)
-
+*Segments*
 
 
 ##Goals
@@ -69,7 +73,7 @@ There are different types of custom goals you can create through google analytic
 4.Event
 
 ![Duration based goal]({{ site.url }}/assets/goal.png)
-
+*Duration based goal*
 
 ##How google analytics works?
 
