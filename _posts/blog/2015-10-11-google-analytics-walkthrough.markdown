@@ -20,8 +20,8 @@ There are bascially 4-5 types of reports in google analytics:
 
 __Real Time:__ As the name infers, it display information like how many users are currently visiting the site, what are their location etc. 
 
-![Real Time Report]({{ site.url }}/assets/real-time.png)
-
+![]({{ site.url }}/assets/real-time.png)
+*Real Time Report*
 
 __Audience:__ Who your users are? It tells about your users demographics , locations, browser/mobile they are using etc. Information like how many of them are first time and how many of them are returning is also the part of this.
 
@@ -59,9 +59,13 @@ A Segment is a subset of your Analytics data. For example, of your entire set of
 Goals is what you want to achieve.Like user should buy a product from your website, a user is interacting with your site more than 30 min, a user is watching a particular video on your website etc.You can create your custom goal.You can also give a value to goal.Like if a user is visitng site for 5 minutes it's a goal and it's worth 1 dollor.Using this you can anaylze your business in terms of revenue like if you are using web advertising than you can compare the money you are spending on advertisement and the value you are getting.Be careful while adding goal value to an ecommerce transaction.
 
 There are different types of custom goals you can create through google analytics:
+
 1.Destination : Like make Thank You page a goal.
+
 2.Duration
+
 3.Pages or Screen per Visit
+
 4.Event
 
 ![Duration based goal]({{ site.url }}/assets/goal.png)
