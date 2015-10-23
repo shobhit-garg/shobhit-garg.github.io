@@ -40,9 +40,9 @@ Iterator<Map.Entry<K,V>> it = set.iterator();
 
          while(it.hasNext())
          {
-             Map.Entry<K,V> pair = i.next();
+             Map.Entry<K,V> pair = it.next();
              V value = pair.getValue();
-             K key = pair.key();
+             K key = pair.getKey();
              #you can use value and key according to your need
          }
 
