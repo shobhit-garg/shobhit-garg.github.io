@@ -80,7 +80,7 @@ parent.postMessage("hi_from_parent_9000","http://localhost:8888");
 
 {% endhighlight %}
 
-__Receiving message in parent
+__Receiving message in parent__
 
 {% highlight ruby %}
 
