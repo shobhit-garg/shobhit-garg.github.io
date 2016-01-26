@@ -109,7 +109,7 @@ else
 
 
 
- ##Simple Request with Credentials
+##Simple Request with Credentials
 
  By default, in cross-site XMLHttpRequest invocations, browsers don't send credentials/cookies.To send cookies along with request a specific flag has to be set on the XMLHttpRequest object when it is invoked which is `withCredentials = true` . Browser will reject any response that does not have the `Access-Control-Allow-Credentials: true` header, and not make the response available to the invoking web content.
 
