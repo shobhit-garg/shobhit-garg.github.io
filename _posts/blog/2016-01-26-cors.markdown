@@ -12,7 +12,7 @@ excerpt:
 
 When users try to access different domain than the one which served itself comes in the purview of CORS.For example if you are on www.geekdirt.com and you try to access some resource of www.otherdomain.com using XMLHttpRequest. Without the use of CORS, user is not allowed to access the resouce of other domain using XMLHttpRequest .
 
-__ How it works? __
+__How it works?__
 
 With each HTTP request a header is sent to server which is called `request header`.On processing the request server also sends a header which is called `response header` . By sending some information in these headers you can allow cross origin access.Like by sending `Access-Control-Allow-Origin` , server can convey which origin is allowed to access the resource and by sending `Access-Control-Allow-Credentials` server can convey that it would be able to access client cookies or not.
 
@@ -22,7 +22,7 @@ An HTTP/1.1 GET or a POST is used as request method.  In the case of a POST, the
 No custom headers are sent with the HTTP Request (such as X-Modified, etc.)
 
 
-__ Java Script Code on Browser: __
+__Java Script Code on Browser:__
 
 Suppose web content on domain http://foo.example wishes to invoke content on domain http://bar.other.
 Code of this sort might be used within JavaScript deployed on foo.example:
@@ -43,7 +43,7 @@ function callOtherDomain() {
 {% endhighlight %}
 
 
-__ Request Header: Header which  browser sends to server __
+__Request Header: Header which  browser sends to server__
 
 {% highlight ruby %}
 
@@ -63,7 +63,7 @@ __ Request Header: Header which  browser sends to server __
 Here you can see in line 2, host is bar.other while origin is http://foo.example , check line 10 . That means this request is for cross origin resourse.
 
 
-__ Response Header: Header which server sends to browser in return __
+__Response Header: Header which server sends to browser in return__
 
 {% highlight ruby %}
 
@@ -80,7 +80,7 @@ __ Response Header: Header which server sends to browser in return __
 
 In the server response 4th line Access-Control-Allow-Origin: http://foo.example is indicating that server is allowing request only from http://foo.example. Server can also allow all the domains to access it's resource by sending Access-Control-Allow-Origin: * .
 
-__ Server PHP Code: __
+__Server PHP Code:__
 
 {% highlight ruby %}
 
@@ -109,11 +109,11 @@ else
 
 
 
- ## Simple Request : Requests with Credentials(Cookies)
+ ##Simple Request : Requests with Credentials(Cookies)
 
  By default, in cross-site XMLHttpRequest invocations, browsers don't send credentials/cookies.To send cookies along with request a specific flag has to be set on the XMLHttpRequest object when it is invoked which is `withCredentials = true` . Browser will reject any response that does not have the `Access-Control-Allow-Credentials: true` header, and not make the response available to the invoking web content.
 
-__ Java Script Code on Browser: __
+__Java Script Code on Browser:__
 
 In this example, content originally loaded from http://foo.example makes a simple GET request to a resource on http://bar.other which sets Cookies.  Content on foo.example might contain JavaScript like this:
 
@@ -180,7 +180,7 @@ __Response Header:__
 
 Here you can see in line 6 that server is sending `Access-Control-Allow-Credentials: true` that means browser can accept the response. Without this flag browser would not accept the response.
 
-__ Server PHP Code: __
+__Server PHP Code:__
 
 {% highlight ruby %}
 
@@ -231,7 +231,7 @@ else
 {% endhighlight %}
 
 
-## Preflighted Requests
+##Preflighted Requests
 
 There were some limitations with Simple Requests which has been mentioned in Simple Request Section.
 So if you want to send other cross origin request you have to send a preflighted request.
@@ -244,7 +244,7 @@ In the preflight workflow first a request is sent to server asking the user to p
 That means only for that time you can send normal request to server with the allowed methods and header.Browser cache this header for that time and validate each request before sending it.
 
 
-__Browser Javascript Code: __
+__Browser Javascript Code:__
 
 {% highlight ruby %}
 
