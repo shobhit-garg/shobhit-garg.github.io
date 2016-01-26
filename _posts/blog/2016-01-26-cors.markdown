@@ -18,6 +18,8 @@ With each HTTP request a header is sent to server which is called `request heade
 
 
 ---------------------------------------------------------------------------
+
+
 ##Simple Request
 
 An HTTP/1.1 GET or a POST is used as request method.  In the case of a POST, the Content-Type of the request body is one of `application/x-www-form-urlencoded` , `multipart/form-data` , or `text/plain` .
