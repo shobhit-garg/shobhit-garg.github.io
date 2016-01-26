@@ -16,6 +16,8 @@ __How it works?__
 
 With each HTTP request a header is sent to server which is called `request header`.On processing the request server also sends a header which is called `response header` . By sending some information in these headers you can allow cross origin access.Like by sending `Access-Control-Allow-Origin` , server can convey which origin is allowed to access the resource and by sending `Access-Control-Allow-Credentials` server can convey that it would be able to access client cookies or not.
 
+
+---------------------------------------------------------------------------
 ##Simple Request
 
 An HTTP/1.1 GET or a POST is used as request method.  In the case of a POST, the Content-Type of the request body is one of `application/x-www-form-urlencoded` , `multipart/form-data` , or `text/plain` .
@@ -107,7 +109,7 @@ else
 
 {% endhighlight %}
 
-
+---------------------------------------------------------------------------
 
 ##Simple Request with Credentials
 
@@ -230,6 +232,8 @@ else
 
 {% endhighlight %}
 
+
+---------------------------------------------------------------------------
 
 ##Preflighted Requests
 
@@ -420,6 +424,7 @@ else
 
 {% endhighlight %}
 
+---------------------------------------------------------------------------
 
 To read more about cookies visit [Cookies][cookies] .
 To read cross domain communication with iframe visit [Cross domain communication with iframe][cross-domain-communication-with-iframe]  . 
