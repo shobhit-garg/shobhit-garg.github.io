@@ -1,0 +1,432 @@
+---
+layout: post
+title:  "Cross-Origin Resource Sharing (CORS)"
+date:   2016-01-26
+categories: blog
+tags: [web,cookies]
+author: shobhit_garg
+share: true
+comments: true
+excerpt:
+---
+
+When users try to access different domain than the one which served itself comes in the purview of CORS.For example if you are on www.geekdirt.com and you try to access some resource of www.otherdomain.com using XMLHttpRequest. Without the use of CORS, user is not allowed to access the resouce of other domain using XMLHttpRequest .
+
+__ How it works? __
+
+With each HTTP request a header is sent to server which is called `request header`.On processing the request server also sends a header which is called `response header` . By sending some information in these headers you can allow cross origin access.Like by sending `Access-Control-Allow-Origin` , server can convey which origin is allowed to access the resource and by sending `Access-Control-Allow-Credentials` server can convey that it would be able to access client cookies or not.
+
+##Simple Request
+
+An HTTP/1.1 GET or a POST is used as request method.  In the case of a POST, the Content-Type of the request body is one of `application/x-www-form-urlencoded` , `multipart/form-data` , or `text/plain` .
+No custom headers are sent with the HTTP Request (such as X-Modified, etc.)
+
+
+__ Java Script Code on Browser: __
+
+Suppose web content on domain http://foo.example wishes to invoke content on domain http://bar.other.
+Code of this sort might be used within JavaScript deployed on foo.example:
+
+{% highlight ruby %}
+
+var invocation = new XMLHttpRequest();
+var url = 'http://bar.other/resources/public-data/';
+   
+function callOtherDomain() {
+  if(invocation) {    
+    invocation.open('GET', url, true);
+    invocation.onreadystatechange = handler;
+    invocation.send(); 
+  }
+}
+
+{% endhighlight %}
+
+
+__ Request Header: Header which  browser sends to server __
+
+{% highlight ruby %}
+
+1.GET /resources/public-data/ HTTP/1.1
+2.Host: bar.other
+3.User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre
+4.Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+5.Accept-Language: en-us,en;q=0.5
+6.Accept-Encoding: gzip,deflate
+7.Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+8.Connection: keep-alive
+9.Referer: http://foo.example/examples/access-control/simpleXSInvocation.html
+10.Origin: http://foo.example
+
+{% endhighlight %}
+
+Here you can see in line 2, host is bar.other while origin is http://foo.example , check line 10 . That means this request is for cross origin resourse.
+
+
+__ Response Header: Header which server sends to browser in return __
+
+{% highlight ruby %}
+
+1.HTTP/1.1 200 OK
+2.Date: Mon, 01 Dec 2008 00:23:53 GMT
+3.Server: Apache/2.0.61 
+4.Access-Control-Allow-Origin: http://foo.example
+5.Keep-Alive: timeout=2, max=100
+6.Connection: Keep-Alive
+7.Transfer-Encoding: chunked
+8.Content-Type: application/xml
+
+{% endhighlight %}
+
+In the server response 4th line Access-Control-Allow-Origin: http://foo.example is indicating that server is allowing request only from http://foo.example. Server can also allow all the domains to access it's resource by sending Access-Control-Allow-Origin: * .
+
+__ Server PHP Code: __
+
+{% highlight ruby %}
+
+<?php
+
+// We'll be granting access to only the arunranga.com domain which we think is safe to access this resource as application/xml
+
+if($_SERVER['HTTP_ORIGIN'] == "http://foo.example")
+{
+ 
+    header('Access-Control-Allow-Origin: http://foo.example');
+    header('Content-type: application/xml');
+    ............
+    ............
+}
+else
+{    
+	header('Content-Type: text/html');
+	..............
+	..............
+}
+
+?>
+
+{% endhighlight %}
+
+
+
+ ## Simple Request : Requests with Credentials(Cookies)
+
+ By default, in cross-site XMLHttpRequest invocations, browsers don't send credentials/cookies.To send cookies along with request a specific flag has to be set on the XMLHttpRequest object when it is invoked which is `withCredentials = true` . Browser will reject any response that does not have the `Access-Control-Allow-Credentials: true` header, and not make the response available to the invoking web content.
+
+__ Java Script Code on Browser: __
+
+In this example, content originally loaded from http://foo.example makes a simple GET request to a resource on http://bar.other which sets Cookies.  Content on foo.example might contain JavaScript like this:
+
+{% highlight ruby %}
+
+1.var invocation = new XMLHttpRequest();
+2.var url = 'http://bar.other/resources/credentialed-content/';
+3.    
+4.function callOtherDomain(){
+5.  if(invocation) {
+6.    invocation.open('GET', url, true);
+7.    invocation.withCredentials = true;
+8.    invocation.onreadystatechange = handler;
+9.    invocation.send(); 
+10.  }
+11. }
+
+{% endhighlight %}
+
+In line 7 , you can see that `withCredentials` flag is true. That means browser will be sending cookies with this request.
+
+__Request Header:__
+
+{% highlight ruby %}
+
+1.GET /resources/access-control-with-credentials/ HTTP/1.1
+2.Host: bar.other
+3.User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre
+4.Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+5.Accept-Language: en-us,en;q=0.5
+6.Accept-Encoding: gzip,deflate
+7.Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+8.Connection: keep-alive
+9.Referer: http://foo.example/examples/credential.html
+10.Origin: http://foo.example
+11.Cookie: pageAccess=2
+
+{% endhighlight %}
+
+Here in line 11 you can see that a cookie is being sent with request.
+
+
+__Response Header:__
+
+{% highlight ruby %}
+
+1.HTTP/1.1 200 OK
+2.Date: Mon, 01 Dec 2008 01:34:52 GMT
+3.Server: Apache/2.0.61 (Unix) PHP/4.4.7 mod_ssl/2.0.61 OpenSSL/0.9.7e mod_fastcgi/2.4.2 DAV/2 SVN/1.4.2
+4.X-Powered-By: PHP/5.2.6
+5.Access-Control-Allow-Origin: http://foo.example
+6.Access-Control-Allow-Credentials: true
+7.Cache-Control: no-cache
+8.Pragma: no-cache
+9.Set-Cookie: pageAccess=3; expires=Wed, 31-Dec-2008 01:34:53 GMT
+10.Vary: Accept-Encoding, Origin
+11.Content-Encoding: gzip
+12.Content-Length: 106
+13.Keep-Alive: timeout=2, max=100
+14.Connection: Keep-Alive
+15.Content-Type: text/plain
+
+{% endhighlight %}
+
+Here you can see in line 6 that server is sending `Access-Control-Allow-Credentials: true` that means browser can accept the response. Without this flag browser would not accept the response.
+
+__ Server PHP Code: __
+
+{% highlight ruby %}
+
+<?php
+
+if($_SERVER['REQUEST_METHOD'] == "GET")
+{
+    // First See if There Is a Cookie   
+    if (!isset($_COOKIE["pageAccess"])) {
+    
+    setcookie("pageAccess", 1, time()+2592000);
+    header('Access-Control-Allow-Origin: http://foo.example');
+    header('Access-Control-Allow-Credentials: true');
+    ...........
+    }
+    else
+    {
+    $accesses = $_COOKIE['pageAccess'];
+    setcookie('pageAccess', ++$accesses, time()+2592000);
+    header('Access-Control-Allow-Origin: http://foo.example');
+    header('Access-Control-Allow-Credentials: true');
+    ...........
+    }
+    
+}
+#This part is related to Preflight request which we has been discussed in next section.
+elseif($_SERVER['REQUEST_METHOD'] == "OPTIONS")
+{
+    // Tell the Client this preflight holds good for only 20 days
+    if($_SERVER['HTTP_ORIGIN'] == "http://foo.example")
+    {
+    header('Access-Control-Allow-Origin: http://foo.example');
+    header('Access-Control-Allow-Methods: GET, OPTIONS');
+    header('Access-Control-Allow-Credentials: true');
+    header('Access-Control-Max-Age: 1728000');
+    ............
+    }
+    else
+    {
+    header("HTTP/1.1 403 Access Forbidden");
+    ...........
+    }
+}
+else
+    die("This HTTP Resource can ONLY be accessed with GET or OPTIONS");
+?>
+
+{% endhighlight %}
+
+
+## Preflighted Requests
+
+There were some limitations with Simple Requests which has been mentioned in Simple Request Section.
+So if you want to send other cross origin request you have to send a preflighted request.
+Preflighted Request uses methods other than GET, HEAD or POST.  Also, if POST is used to send request data with a Content-Type other than `application/x-www-form-urlencoded`, `multipart/form-data`, or `text/plain`, e.g. if the POST request sends an XML payload to the server using application/xml or text/xml, then the request is preflighted. Also you can send custom(non standard) HTTP header with preflight request.The methos which is used to send these type of request is `OPTION` .
+
+
+__Workflow:__
+
+In the preflight workflow first a request is sent to server asking the user to permit http method ,custom header etc. Server responds this request with a header with information like which http methods and which cutom headers are permitted.This response header has a expiry time attached with it.
+That means only for that time you can send normal request to server with the allowed methods and header.Browser cache this header for that time and validate each request before sending it.
+
+
+__Browser Javascript Code: __
+
+{% highlight ruby %}
+
+1.var invocation = new XMLHttpRequest();
+2.var url = 'http://bar.other/resources/post-here/';
+3.var body = '<?xml version="1.0"?><person><name>Arun</name></person>';
+4.    
+5.function callOtherDomain(){
+6.  if(invocation)
+7.    {
+8.      invocation.open('POST', url, true);
+9.      invocation.setRequestHeader('X-PINGOTHER', 'pingpong');
+10.      invocation.setRequestHeader('Content-Type', 'application/xml');
+11.      invocation.onreadystatechange = handler;
+12.      invocation.send(body); 
+13.    }
+14.}
+
+{% endhighlight %}
+Here you can see that a post request is being send with content type application/xml that's why it's a preflighted request.Also a custom header 'X-PINGOTHER' is being sent with value 'pingpong' which is only allowed in preflighted requests.
+
+
+__Preflighted Request Header:__
+
+{% highlight ruby %}
+
+1.OPTIONS /resources/post-here/ HTTP/1.1
+2.Host: bar.other
+3.User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre
+4.Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+5.Accept-Language: en-us,en;q=0.5
+6.Accept-Encoding: gzip,deflate
+7.Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+8.Connection: keep-alive
+9.Origin: http://foo.example
+10.Access-Control-Request-Method: POST
+11.Access-Control-Request-Headers: X-PINGOTHER
+
+{% endhighlight %}
+In line 1 you can see that http method OPTION is used to send the request. In line 11 you can see that it is requesting server to allow to send a custom header X-PINGOTHER . In line 10 it is indicating to server that next request it will be sending using POST method so allow that method.
+
+__Preflighted Response Header:__
+
+{% highlight ruby %}
+
+HTTP/1.1 200 OK
+1.Date: Mon, 01 Dec 2008 01:15:39 GMT
+2.Server: Apache/2.0.61 (Unix)
+3.Access-Control-Allow-Origin: http://foo.example
+4.Access-Control-Allow-Methods: POST, GET, OPTIONS
+5.Access-Control-Allow-Headers: X-PINGOTHER
+6.Access-Control-Max-Age: 1728000
+7.Vary: Accept-Encoding, Origin
+8.Content-Encoding: gzip
+9.Content-Length: 0
+10.Keep-Alive: timeout=2, max=100
+11.Connection: Keep-Alive
+12.Content-Type: text/plain
+
+{% endhighlight %}
+
+Line 4, Server is allowing client/browser to send request through http methods POST, GET, OPTIONS .
+Line 5, Server is allowing custom header X-PINGOTHER.
+Line 6, Max age of the response.After that browser would delete this response from it's cache.
+
+
+__Normal Request Header (After the preflighted request):__
+
+{% highlight ruby %}
+
+1.POST /resources/post-here/ HTTP/1.1
+2.Host: bar.other
+3.User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre
+4.Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+5.Accept-Language: en-us,en;q=0.5
+6.Accept-Encoding: gzip,deflate
+7.Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+8.Connection: keep-alive
+9.X-PINGOTHER: pingpong
+10.Content-Type: text/xml; charset=UTF-8
+11.Referer: http://foo.example/examples/preflightInvocation.html
+12.Content-Length: 55
+13.Origin: http://foo.example
+14.Pragma: no-cache
+15.Cache-Control: no-cache
+
+<?xml version="1.0"?><person><name>Arun</name></person>
+
+{% endhighlight %}
+
+Line 1, Sending POST request.
+Line 9, Sending custom header.
+
+__Normal Response Header:__
+
+{% highlight ruby %}
+
+1.HTTP/1.1 200 OK
+2.Date: Mon, 01 Dec 2008 01:15:40 GMT
+3.Server: Apache/2.0.61 (Unix)
+4.Access-Control-Allow-Origin: http://foo.example
+5.Vary: Accept-Encoding, Origin
+6.Content-Encoding: gzip
+7.Content-Length: 235
+8.Keep-Alive: timeout=2, max=99
+9.Connection: Keep-Alive
+10.Content-Type: text/plain
+
+{% endhighlight %}
+
+Line 1, response code is 200 it means server is executing the request successfully.
+
+__Server PHP Code:__
+
+{% highlight ruby %}
+
+<?php 
+
+#Do nothing if getting an GET request
+if($_SERVER['REQUEST_METHOD'] == "GET")
+{
+    header('Content-Type: text/plain');
+    echo "This HTTP resource is designed to handle POSTed XML input from foo.example and not be retrieved with GET";
+   
+}
+#Code for handling Preflighted Request
+elseif($_SERVER['REQUEST_METHOD'] == "OPTIONS")
+{
+    // Tell the Client we support invocations from foo.example and that this preflight holds good for only 20 days
+    if($_SERVER['HTTP_ORIGIN'] == "http://foo.example")
+    {
+    header('Access-Control-Allow-Origin: http://foo.example');
+    header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+    header('Access-Control-Allow-Headers: X-PINGARUNER');
+    header('Access-Control-Max-Age: 1728000');
+    header("Content-Length: 0");
+    header("Content-Type: text/plain");
+    }
+    else
+    {
+    header("HTTP/1.1 403 Access Forbidden");
+    header("Content-Type: text/plain");
+    echo "You cannot repeat this request";
+   
+    }
+}
+#Code for handling POST request after the Preflighted Request
+elseif($_SERVER['REQUEST_METHOD'] == "POST")
+{
+    /* Handle POST by first getting the XML POST blob, and then doing something to it, and then sending results to the client
+    */
+    if($_SERVER['HTTP_ORIGIN'] == "http://foo.example")
+    {
+            $postData = file_get_contents('php://input');
+            $document = simplexml_load_string($postData);
+            
+            // do something with POST data
+
+            $ping = $_SERVER['HTTP_X_PINGARUNER'];
+           
+                       
+            header('Access-Control-Allow-Origin: foo.example');
+            header('Content-Type: text/plain');
+            ..........
+    }
+    else
+        die("POSTing Only Allowed from foo.example");
+}
+else
+    die("No Other Methods Allowed");
+
+?>
+
+{% endhighlight %}
+
+
+To read more about cookies visit [Cookies][cookies] .
+To read cross domain communication with iframe visit [Cross domain communication with iframe][cross-domain-communication-with-iframe]  . 
+
+
+For more details on CORS read [Mozilla Documentation on CORS][mozilla-cors]
+
+[mozilla-cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+[cross-domain-communication-with-iframe]: {{ site.url }}/blog/cross-domain-communication-with-iframe
+[cookies]: {{ site.url }}/blog/cookies
