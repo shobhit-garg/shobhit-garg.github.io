@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "nginx & reverse proxy" 
+title:  "nginx and reverse proxy" 
 date:   2016-02-14
 categories: blog
 tags: [server,nginx,web]
