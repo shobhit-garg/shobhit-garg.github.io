@@ -36,7 +36,7 @@ Let me explain this with an example. When you access google.com through your bro
 
  On different platforms you can install nginx using different ways. I have tried with OS X and Ubuntu.For other platforms you can search on google or read the [official documentation][nginx-install].
 
- _On OS X:_
+ *On OS X:*
    
   You can install it using package manager `brew`.If you don't have brew in your machine please install it first. 
 
@@ -45,7 +45,7 @@ Let me explain this with an example. When you access google.com through your bro
 
  nginx stores the configuration in `nginx.conf` file. If you install nginx using brew default location of this file is /usr/local/etc/nginx/nginx.conf . If you don't find this file here please find it using command `find / -name nginx.conf` .
 
- _On Ubuntu:_
+ *On Ubuntu:*
 
  You can install it using package management tool `apt-get` .
 
