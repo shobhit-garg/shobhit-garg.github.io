@@ -7,11 +7,11 @@ tags: [server,nginx,web]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 
-##What is reverse proxy?
+## What is reverse proxy?
 
 A reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more servers.
 
@@ -28,7 +28,7 @@ Let me explain this with an example. When you access google.com through your bro
 * Handle SSL of secured websites and may more.
 
 
- ##nginx
+ ## nginx
  
  `nginx` is a web server like Apache. It can act as a reverse proxy server,load balacer and HTTP cache.
 
@@ -50,6 +50,7 @@ Let me explain this with an example. When you access google.com through your bro
  You can install it using package management tool `apt-get` .
 
  `apt-get update`
+ 
  `apt-get install -y nginx`
  
  In my case the conf file is located at /etc/nginx/nginx.conf . Again if you don't find it here you can use `find` command to find it's location.
