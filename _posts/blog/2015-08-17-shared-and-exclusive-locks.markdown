@@ -7,7 +7,7 @@ tags: [transaction,database]
 author: shobhit_garg
 comments: true
 share: true
-excerpt:
+excerpt: ""
 ---
 
 I am assuming you have gone through [transactions and locks][transactions-and-locks] before starting this.

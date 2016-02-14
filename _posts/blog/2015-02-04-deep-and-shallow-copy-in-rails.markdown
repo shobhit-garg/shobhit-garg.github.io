@@ -7,7 +7,7 @@ tags: [rubyonrails]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 __Shallow Copy:__ They don't copy the objects that might be referenced within the copied object.In rails dup and clone are used for this.

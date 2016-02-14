@@ -7,7 +7,7 @@ tags: [rubyonrails,logs]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 We anaylze production logs time to time.There are many gems/tools available for it.But i found [request-log-analyzer][rla] a good tool to use.To install this gem use 

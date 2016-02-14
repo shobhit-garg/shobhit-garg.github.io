@@ -28,7 +28,7 @@ Let me explain this with an example. When you access google.com through your bro
 * Handle SSL of secured websites and may more.
 
 
- ## nginx
+## nginx
  
  `nginx` is a web server like Apache. It can act as a reverse proxy server,load balacer and HTTP cache.
 
@@ -36,7 +36,7 @@ Let me explain this with an example. When you access google.com through your bro
 
  On different platforms you can install nginx using different ways. I have tried with OS X and Ubuntu.For other platforms you can search on google or read the [official documentation][nginx-install].
 
- *On OS X:*
+<u>On OS X:</u>
    
   You can install it using package manager `brew`.If you don't have brew in your machine please install it first. 
 
@@ -45,7 +45,7 @@ Let me explain this with an example. When you access google.com through your bro
 
  nginx stores the configuration in `nginx.conf` file. If you install nginx using brew default location of this file is /usr/local/etc/nginx/nginx.conf . If you don't find this file here please find it using command `find / -name nginx.conf` .
 
- *On Ubuntu:*	
+<u>On Ubuntu:</u>	
 
  You can install it using package management tool `apt-get` .
 

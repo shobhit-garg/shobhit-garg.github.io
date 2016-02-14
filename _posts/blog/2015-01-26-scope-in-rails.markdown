@@ -7,7 +7,7 @@ tags: [rubyonrails]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 Scope basically adds a __class method__ for __retrieving and querying objects__. A scope basically narrows the database query.You can use multiple scope in single staement.

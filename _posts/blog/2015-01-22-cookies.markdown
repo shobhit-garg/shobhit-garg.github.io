@@ -7,7 +7,7 @@ tags: [web,general]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 Cookie is a peice of data sent from website and it is stored in web browser.It is used to store information basically related to user like user id,his cart id sometimes it's password etc.You can check the cookies data through web browser.Like in chrome do right click and go to  Inspect Element-> Resouces -> Cookies.

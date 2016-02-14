@@ -7,7 +7,7 @@ tags: [java,memory]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 __Java APIs :__ Set of run time libraries that give you standard way to access the system resources of host computer.When you run a java program JVM loads the JAVA API class files that are referred by your program's class file. They are platform dependent.

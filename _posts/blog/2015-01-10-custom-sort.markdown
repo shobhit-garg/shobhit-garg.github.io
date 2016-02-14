@@ -7,7 +7,7 @@ tags: [rubyonrails,ruby]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 We can sort the array of integers in ruby easily,just by using the sort function.But what if we want to __sort array of arrays or array of objects__ etc.

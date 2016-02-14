@@ -7,7 +7,7 @@ tags: [rubyonrails,ruby]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 In Ruby a class itself is an instance of the Ruby class.

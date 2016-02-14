@@ -6,7 +6,7 @@ categories: blog
 tags: [solr]
 author: shobhit_garg
 share: true
-excerpt:
+excerpt: ""
 comments: true
 ---
 

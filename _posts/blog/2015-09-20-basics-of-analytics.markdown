@@ -7,7 +7,7 @@ tags: [analytics]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 Analytics is the discovery and communication of meaningful patterns in data.As the market is changing continuously and customer is getting more and more aware , many of the firms and even the small businesses are using Analytics.Analytics helps in finding the common patterns , helps in deciding your long term plans, help in predecting performance and much more.

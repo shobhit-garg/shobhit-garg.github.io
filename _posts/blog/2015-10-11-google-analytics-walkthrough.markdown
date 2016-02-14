@@ -7,7 +7,7 @@ tags: [analytics,google-analytics]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 Before starting this please go through [Basics of Analytics][basics-of-analytics] to understand the basics of analytics. 

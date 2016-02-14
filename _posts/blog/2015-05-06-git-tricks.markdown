@@ -7,7 +7,7 @@ tags: [general,git]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 __When git repo is connected using ssh:__

@@ -7,7 +7,7 @@ tags: [web,cookies]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 When users try to access different domain than the one which served itself comes in the purview of CORS.For example if you are on www.geekdirt.com and you try to access some resource of www.otherdomain.com using XMLHttpRequest. Without the use of CORS, user is not allowed to access the resouce of other domain using XMLHttpRequest .
@@ -20,7 +20,7 @@ With each HTTP request a header is sent to server which is called `request heade
 ---------------------------------------------------------------------------
 
 
-##Simple Request
+## Simple Request
 
 An HTTP/1.1 GET or a POST is used as request method.  In the case of a POST, the Content-Type of the request body is one of `application/x-www-form-urlencoded` , `multipart/form-data` , or `text/plain` .
 No custom headers are sent with the HTTP Request (such as X-Modified, etc.)
@@ -113,7 +113,7 @@ else
 
 ---------------------------------------------------------------------------
 
-##Simple Request with Credentials
+## Simple Request with Credentials
 
  By default, in cross-site XMLHttpRequest invocations, browsers don't send credentials/cookies.To send cookies along with request a specific flag has to be set on the XMLHttpRequest object when it is invoked which is `withCredentials = true` . Browser will reject any response that does not have the `Access-Control-Allow-Credentials: true` header, and not make the response available to the invoking web content.
 
@@ -237,7 +237,7 @@ else
 
 ---------------------------------------------------------------------------
 
-##Preflighted Requests
+## Preflighted Requests
 
 There were some limitations with Simple Requests which has been mentioned in Simple Request Section.
 So if you want to send other cross origin request you have to send a preflighted request.

@@ -7,7 +7,7 @@ tags: [jquery]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 Sometimes you need to provide a functionality to user to upload the file on server.There are many plugin on web to do this but i found [jquery-file-upload][jfu] nice and easy to use.This provides a lot of functionality but  here i am describing the basic functionality  which we all need generally.

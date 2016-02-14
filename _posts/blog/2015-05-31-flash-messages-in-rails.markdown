@@ -7,7 +7,7 @@ tags: [rubyonrails]
 author: shobhit_garg
 share: true
 comments: true
-excerpt:
+excerpt: ""
 ---
 
 The flash provides a way to pass temporary primitive-types (String, Array, Hash) between actions. Anything you place in the flash will be __exposed to the very next action and then cleared out__.

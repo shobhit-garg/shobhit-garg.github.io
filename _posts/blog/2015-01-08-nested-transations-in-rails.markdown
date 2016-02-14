@@ -7,7 +7,7 @@ tags: [rubyonrails,transaction,database]
 author: shobhit_garg
 comments: true
 share: true
-excerpt:
+excerpt: ""
 ---
 
 In case of a single transation we can apply transation on one database.What if we need _transactions on multiple databases_? Rails supports nested transactions for this but before using it ,read about it carefully.
