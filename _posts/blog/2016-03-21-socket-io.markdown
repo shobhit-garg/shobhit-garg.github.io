@@ -31,7 +31,7 @@ Now for example purposes i am creating a node server which would be listening on
 
 7.Check server logs on terminal console and client logs through console of browser.
 
-##Simple Workflow
+## Simple Workflow
 
 __index.js__
 
@@ -120,7 +120,7 @@ hello from server
 ![Diagram]({{ site.url }}/assets/socketio_class.png)
 <u>Class Diagram</u>
 
-##Namespaces
+## Namespaces
 
 
 
@@ -179,7 +179,7 @@ message sent for all the sockets for chat namespace
 <u>Architecture Diagram</u>
 
 
-##Rooms
+## Rooms
 
 In a namespace you can create rooms. A socket can be the part of multiple rooms.Each socket in socket.io is identified by a random, unguessable, unique identifier Socket#id. For your convenience, each socket automatically joins a room identified by this id.Socket can join a room only through server .Client can send a message to server saying which room it should join and server can process the request accordingly.
 
