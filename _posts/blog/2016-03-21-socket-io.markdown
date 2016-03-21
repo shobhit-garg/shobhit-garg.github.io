@@ -3,7 +3,7 @@ layout: post
 title:  "Detailed Explanation of SOCKET.IO"
 date:   2016-03-21
 categories: blog
-tags: [web,socket]
+tags: [web,socket,node,server]
 author: shobhit_garg
 share: true
 comments: true
