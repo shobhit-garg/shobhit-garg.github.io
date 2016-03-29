@@ -132,7 +132,7 @@ There are other options you can send along with document to solr.There should be
 
 
 
-#Calling Rest Api to update solr:
+# Calling Rest Api to update solr:
 
 {% highlight ruby %}
 
@@ -175,7 +175,7 @@ RestClient.post("http://localhost:8983/solr/simple2/update?commit=true", "{}", {
 
 
 
-#Deleting Document:
+# Deleting Document:
 
 {% highlight ruby %}
 
