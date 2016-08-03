@@ -260,7 +260,7 @@ file2.ts
 {% highlight ts linenos %}
 import {Test} from "./file3.d.ts";
 export class C {
-    public element:Test;
+    public element : Test;
 }
 {% endhighlight %}
 
