@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Javascript & Node : COMMONJS and AMD"
-date:   2016-03-21
+date:   2016-05-01
 categories: blog
 tags: [web,node,server,javascript]
 author: shobhit_garg
