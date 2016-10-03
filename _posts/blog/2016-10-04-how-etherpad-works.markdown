@@ -57,7 +57,7 @@ __ACCEPT_COMMIT:__ Message of this type is sent from server to client on accepti
 __NEW_CHANGES:__ Message of this type is sent from server to client to let it know about other user changesets if multiple users are working on same pad.
 
 
-## How pad loads into client browser?
+## How pad gets loaded into client browser?
 
 Through http calls etherpad-lite loads the supporting scripts and html.It never loads the actual content of pad through it.When the scripts get loaded, it creates a socket connection with server.And after creating connecting it sends a message of type `CLIENT_READY` with information like padID and other security related token and passwords.Server on receiving this message verifies the user and store it's info in sessionInfo in local memory and then send the pad details to client with message type `CLIENT_VARS` .After that, corresponding communication socket joins the room of that padID.(Because server should know which all clients are connected to a pad so by adding socket to room this information remains on server.Using this room concept now you can find which all clients are connected to a particular pad and can send a message to all of them or a particular one).After reading this data which is sent with message type CLIENT_VARS browser loads the pad into memory and render it.
 
