@@ -24,13 +24,11 @@ test {puts "You are in a block"}
 
 
 
-#__How to use block?__
+## How to use block?
 
-#Case 1: 
+__Case 1: Passing a block to a function not as a function argument : Use 'yield' to access__
 
-__Passing a block to a function not as a function argument : Use 'yield' to access__
-
-if a block is passed to a function , function can run it's code using yield. If at the time of calling the function, block is not passed then accessing the block would throw exception.So the better way is to check before using that block is passed or not in the function and to check this you can use __block_given?__ .Check the below examples for better understanding.
+if a block is passed to a function , function can run it's code using yield. If at the time of calling the function, block is not passed then accessing the block would throw exception. So the better way is to check before using that block is passed or not in the function and to check this you can use __block_given?__ . Check the below examples for better understanding.
 
 
 {% highlight ruby %}
@@ -75,12 +73,10 @@ speak_safe
 
 
 
-#Case 2: 
-
-__Passing a block to a function as a function argument : Using 'call' to access__
+__Case 2: Passing a block to a function as a function argument : Using 'call' to access__
 
 
-Prepend '&' in the last argument name if block is passed in it.In case both * and & are present in the argument list, & should come later.Block attached to this method is converted to a Proc object and gets assigned to that last argument.
+Prepend '&' in the last argument name if block is passed in it. In case both * and & are present in the argument list, & should come later. Block attached to this method is converted to a Proc object and gets assigned to that last argument.
 You can use yield here too.
 
 
@@ -102,9 +98,9 @@ speak() #or speak
 {% endhighlight %}
 
 
-#Blocks which expect values
+<u>Blocks which expect values</u>
 
-Arguments can be passed to blocks.For this within the block, you list the names of the arguments to receive the parameters between vertical bars (|..|).
+Arguments can be passed to blocks.For this within the block, you list the names of the arguments to receive the parameters between vertical bars ( &#124;..&#124; ).
 
 {% highlight ruby %}
 
@@ -122,12 +118,14 @@ test() {|i,j| i*j}
 #200
 #Proc (Read the complete article to get an idea about Proc) 
 
+
 {% endhighlight %}
 
-__Explanation__ : Block {|i,j| i*j} is passed to function and using block.call and yield , block runs.
+__Explanation__ : Block { &#124;i,j&#124;  i*j} is passed to function and using block.call and yield , block runs.
 
 
-#__Procs__
+
+## Procs
 
 Procs in Ruby are first-class objects, since they can be created during runtime, stored in data structures, passed as arguments to other functions and returned as the value of other functions.
 
@@ -156,7 +154,7 @@ check(&p) #passing block not proc
 
 {% endhighlight %}
 
-#__lambda__
+## lambda
 
 lambda is used to create Proc object. It's same as Proc except some minor differences.
 

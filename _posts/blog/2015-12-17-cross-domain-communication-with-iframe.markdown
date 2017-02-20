@@ -11,12 +11,12 @@ excerpt: ""
 ---
 
 
-People generally load iframe of different domain/origin in their webpage.Like may sites have the iframe of youtube loaded in it.Sometimes you need to communicate with these iframes but due to cross origin security reasons you are not able to do it.
+People generally load iframe of different domain/origin in their webpage. Like may sites have the iframe of youtube loaded in it. Sometimes you need to communicate with these iframes but due to cross origin security reasons you are not able to do it.
 
-Consider a case when you host a video player on your server and you are embedding this video player in your webpage which is in different domain.Now you want to display the lyrics in your webpage as you start playing the video in your iframe.This time you own the iframe too, so there should be a way to communicate with your webpage.
+Consider a case when you host a video player on your server and you are embedding this video player in your webpage which is in different domain. Now you want to display the lyrics in your webpage as you start playing the video in your iframe. This time you own the iframe too, so there should be a way to communicate with your webpage.
 
 
-The way we use for this is called window message passing.To explain this clearly i have hosted two websites, address of first one is http://localhost:8888 and second one is http://localhost:9000. In the page of http://localhost:8888, i am embedding iframe of http://localhost:9000 . So here the parent is http://localhost:8888 and the child is http://localhost:9000 .
+The way we use for this is called window message passing. To explain this clearly i have hosted two websites, address of first one is http://localhost:8888 and second one is http://localhost:9000. In the page of http://localhost:8888, i am embedding iframe of http://localhost:9000 . So here the parent is http://localhost:8888 and the child is http://localhost:9000 .
 
 
 ![Diagram]({{ site.url }}/assets/iframe.png)
@@ -34,7 +34,7 @@ The way we use for this is called window message passing.To explain this clearly
 
 {% endhighlight %}
 
-##Sending message from Parent to Child
+## Sending message from Parent to Child
 
 __Sending message from parent__
 

@@ -15,7 +15,7 @@ We anaylze production logs time to time.There are many gems/tools available for 
 gem install request-log-analyzer
 {% endhighlight %}
 
-#General Use:
+__General Use:__
 
 If you want to analyse completly(without any custom option) just run this command:
 {% highlight ruby %}
@@ -37,7 +37,7 @@ This generates a detailed report having these informations:
 6.Routing errors etc.
 
 
-#Custom Formats
+__Custom Formats:__
 
 Now say, You log the data when you make an api call from your app.Your log format is like this:
 

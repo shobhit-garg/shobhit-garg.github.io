@@ -10,7 +10,7 @@ comments: true
 excerpt: ""
 ---
 
-#Transactions
+## Transactions
 
 Transactions are required for atomicity.If one part of the transaction fails, the entire transaction fails, and the database state is left unchanged.
 
@@ -38,7 +38,7 @@ mysql1> update orders set amount = 500 where id = 1;
 mysql2> select amount from orders where id = 1;
 1000
 
-#because database creates a replica of data which is not in commited state.It always return the commited data to each session.As we have not commited the session 1 transaction yet that's why it is showing amount as 1000.
+#because database creates a replica of data which is not in commited state. It always return the commited data to each session. As we have not commited the session 1 transaction yet that's why it is showing amount as 1000.
 
 #session 1
 mysql1> COMMIT
@@ -114,7 +114,7 @@ mysql2> select amount from orders where id = 1;
 
 mysql2> update orders set amount = 1500 where id = 1;
 #(this is now dependend on session 1 transaction becuase you are trying to update the same tuple.
-So this session would start waiting.You can't do any operation this time.)
+So this session would start waiting. You can't do any operation this time.)
 
 
 #session 1
@@ -141,7 +141,7 @@ mysql1> select amount from orders where id = 1;
 
 
 
-#Locking
+## Locking
 
 * Used for locking the entire table.
 
@@ -209,7 +209,7 @@ mysql1> UNLOCK TABLES;
 {% endhighlight %}
 
 
-Update : Keep few points in mind, transactions are supported by storage engine InnoDB but not by MYIsam.And MyIsam supports table level locking while InnoDB doesn't.Althought MySql ensures table level locking on InnoDB but we should not use table level locks when using InnoDB storage engine.
+Update : Keep few points in mind, transactions are supported by storage engine InnoDB but not by MYIsam. And MyIsam supports table level locking while InnoDB doesn't. Althought MySql ensures table level locking on InnoDB but we should not use table level locks when using InnoDB storage engine.
 
 
 

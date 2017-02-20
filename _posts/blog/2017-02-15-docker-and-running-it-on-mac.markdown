@@ -15,7 +15,7 @@ The advantage of VM is that you can install a number of libraries and applicatio
 
 
 ![Diagram]({{ site.url }}/assets/dockervsvm.jpg)
-<u>Virtual Machine and Docker (Image source:Docker Offical Documentation) </u>
+<u><br>Virtual Machine and Docker (Image source:Docker Offical Documentation) </u>
 
 You can achieve the same thing through Docker in more enhanced and effective way. Docker just uses a layer of `docker-engine` over OS layer to run applications through it, so it's a light weight process compare to running VMs. Running a docker image also takes a lot lesser time as compare to VM. There are two main things in docker:
 

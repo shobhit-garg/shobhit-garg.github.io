@@ -18,7 +18,7 @@ Lets take a example of array of arrays:
 arr = [[1,4,3],[2,1,7],[3,2,8]]
 {% endhighlight %}
 
-#Using sort:
+## Using sort:
 
 Now you want to sort this array in the __ascending order of the middle element of the inner arrays__.All you need to do is:
 
@@ -63,7 +63,7 @@ end
 
 {% endhighlight %}
 
-#Using sort_by
+## Using sort_by
 
 Here you basically focus on the part of element using which you want to sort the whole array.
 {% highlight ruby %}
