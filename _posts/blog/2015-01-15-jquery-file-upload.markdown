@@ -10,7 +10,7 @@ comments: true
 excerpt: ""
 ---
 
-Sometimes you need to provide a functionality to user to upload the file on server.There are many plugin on web to do this but i found [jquery-file-upload][jfu] nice and easy to use.This provides a lot of functionality but  here i am describing the basic functionality  which we all need generally.
+Sometimes you need to provide a functionality to user to upload the file on server. There are many plugin on web to do this but i found [jquery-file-upload][jfu] nice and easy to use. This provides a lot of functionality but  here i am describing the basic functionality  which we all need generally.
 
 
 Apart from jquery standard js file you need three more files which are:
@@ -72,9 +72,9 @@ $(function () {
 </script>
 {% endhighlight %}
 
-At the start of this code a div for progress bar has added.As your files get uploaded this progress bar would display the progress.As we are providing green color to progress bar so make sure that your background color shouldn't be green.
+At the start of this code a div for progress bar has added. As your files get uploaded this progress bar would display the progress. As we are providing green color to progress bar so make sure that your background color shouldn't be green.
 
-Using this you can upload multiple files.In this case files get uploaded to the server one by one and response would be returned from server for each file.The data which server should return on uploading should be of format:
+Using this you can upload multiple files. In this case files get uploaded to the server one by one and response would be returned from server for each file. The data which server should return on uploading should be of format:
 
 {% highlight ruby %}
 
@@ -91,7 +91,7 @@ Using this you can upload multiple files.In this case files get uploaded to the 
 
 {% endhighlight %}
 
-Now say you want to upload all the files in one go for this you have to set _singleFileUploads_ to false. In many cases you would want to send some other data to server like some ids along with files.For this you have to set data in _formData_ .
+Now say you want to upload all the files in one go for this you have to set _singleFileUploads_ to false. In many cases you would want to send some other data to server like some ids along with files. For this you have to set data in _formData_ .
 
 {% highlight ruby %}
  $(function () {
@@ -129,13 +129,13 @@ Now say you want to upload all the files in one go for this you have to set _sin
         });
     });
 {% endhighlight %}
-Here remember,format of formData should remain same.On server this data would go as:
+Here remember,format of formData should remain same. On server this data would go as:
 
 {% highlight ruby %}
 {"a":1,"b":1,"files":[....]}
 {% endhighlight %}
 
-On backend side you have to read the files one by one from the array and do processing on it.For backend,technology can be different like php,rails,java etc. so you have to read the file according to functions provided by the respected technology.
+On backend side you have to read the files one by one from the array and do processing on it. For backend,technology can be different like php,rails,java etc. so you have to read the file according to functions provided by the respected technology.
 
 
 For more options please check [this][options] out.

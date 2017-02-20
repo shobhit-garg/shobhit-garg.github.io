@@ -34,11 +34,11 @@ Let me explain this with an example. When you access google.com through your bro
 
  __Installing nginx:__
 
- On different platforms you can install nginx using different ways. I have tried with OS X and Ubuntu.For other platforms you can search on google or read the [official documentation][nginx-install].
+ On different platforms you can install nginx using different ways. I have tried with OS X and Ubuntu. For other platforms you can search on google or read the [official documentation][nginx-install].
 
 <u>On OS X:</u>
    
-  You can install it using package manager `brew`.If you don't have brew in your machine please install it first. 
+  You can install it using package manager `brew`. If you don't have brew in your machine please install it first. 
 
  `brew install nginx`
 
@@ -53,10 +53,10 @@ Let me explain this with an example. When you access google.com through your bro
  
  `apt-get install -y nginx`
  
- In my case the conf file is located at /etc/nginx/nginx.conf . Again if you don't find it here you can use `find` command to find it's location.
+ In my case the conf file is located at /etc/nginx/nginx.conf .  Again if you don't find it here you can use `find` command to find it's location.
 
  
- Installing nginx using these methods automatically triggers it.Go to localhost:80 to check nginx has started successfully or not. Now stop nginx using command `sudo nginx -s stop`. For making nginx worked as reverse proxy, you have to edit the nginx.conf file and start nginx again using command `nginx`. 
+ Installing nginx using these methods automatically triggers it. Go to localhost:80 to check nginx has started successfully or not. Now stop nginx using command `sudo nginx -s stop`. For making nginx worked as reverse proxy, you have to edit the nginx.conf file and start nginx again using command `nginx`. 
 
 
 __nginx.conf__
@@ -104,7 +104,7 @@ http {
 
 {% endhighlight %}
 
-For http request there is http block in conf file. In http block main block is `server` block.
+For http request there is http block in conf file. In http block main block is `server` block. 
 In server block you can see the directives `listen` and `server_name` . nginx first tests the IP address and port of the request against the listen directive of the server blocks. First it checks the port no of request against listen directive value then it checks the host name of request against server_name.As there can be multiple server blocks so first which server block handle the request gets decided using listen and server_name directive. Then comes the role of `location` block inside server block which matches the request url with it's value.
 
 In the given example there is only one server block which is listening to port 80. So if a request comes with url localhost:80 , this server block would handle this request.As you see in this location block, localhost:80 would result in opening a index.html file.

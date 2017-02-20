@@ -12,8 +12,8 @@ excerpt: ""
 
 ## What is Typescript?
 
-When you code in javascript you don't know the datatype of variable used. You IDE doesn't know what's inside an object that's the reason it doesn't give you suggestion. For example many of the times you have to use `parseInt()` to convert a string/integer to a integer because you don't know what's actually in the variable.You can't create Class/Interface in javascript.Using javascript you can't write object oriented and modular code easily.That is where Typescript comes into role.
-TypeScript is a typed superset of Javascript that compiles to plain javascript.Means you can write typed code(using classes/interfaces/datatypes and all) using typescript and later it can be compiled into javascript. Typescript gets compiled into javascript and then only it can be run, so basically at last you get pure javascript.You can also code nodejs using typescript.
+When you code in javascript you don't know the datatype of variable used. You IDE doesn't know what's inside an object that's the reason it doesn't give you suggestion. For example many of the times you have to use `parseInt()` to convert a string/integer to a integer because you don't know what's actually in the variable.You can't create Class/Interface in javascript.Using javascript you can't write object oriented and modular code easily. That is where Typescript comes into role.
+TypeScript is a typed superset of Javascript that compiles to plain javascript. Means you can write typed code(using classes/interfaces/datatypes and all) using typescript and later it can be compiled into javascript. Typescript gets compiled into javascript and then only it can be run, so basically at last you get pure javascript.You can also code nodejs using typescript.
 
 
 __Example:__
@@ -54,7 +54,7 @@ var Test = (function () {
 {% endhighlight %}
 
 
- When you start using typesript,at first you feel reluctant, but when you get used to it, it's pretty easy and can make your life simpler.For this post i am not covering the basics of typescript. You can read the basics from the [official documentation][typescript_docs] .
+ When you start using typesript, at first you feel reluctant, but when you get used to it, it's pretty easy and can make your life simpler. For this post i am not covering the basics of typescript. You can read the basics from the [official documentation][typescript_docs] .
 
 ---------------------
 
@@ -65,7 +65,7 @@ Namespace <=> Internal Module
 
 Module <=> External Module
 
-In the starting versions of typescript `namespace` is called `internal module` and `module` is called `external module`.It's very confusing when you read some article/documentation/blog related to typescript so please keep that thing in mind.
+In the starting versions of typescript `namespace` is called `internal module` and `module` is called `external module`. It's very confusing when you read some article/documentation/blog related to typescript so please keep that thing in mind.
 
 __Module/External Module__
 
@@ -73,7 +73,7 @@ In TypeScript, just as in ECMAScript 2015, any file containing a top-level impor
 
 __Namespace/Internal Module__
 
-Namespaces are using to basically wrap up the code in logical blogs.You can't `require` or `import` Namespaces in other modules/namespaces like you can import or require external modules. You can access Namespaces present in different files only through `reference path` .
+Namespaces are using to basically wrap up the code in logical blogs. You can't `require` or `import` Namespaces in other modules/namespaces like you can import or require external modules. You can access Namespaces present in different files only through `reference path` .
 
 <u>Example</u>
 
@@ -96,7 +96,7 @@ module test{
 {% endhighlight %}
 
 
-You __can use both keywords namespace and module to create a namespace__ .As i mentioned above previously namespace was called internal module that's why there is a support of module keyword.
+You __can use both keywords namespace and module to create a namespace__ . As i mentioned above previously namespace was called internal module that's why there is a support of module keyword.
 
 --------------------
 
@@ -210,13 +210,13 @@ console.log(test.a);
 
 ## Declaration Files:
 
-Now the question arises is how to use existing javascript libraries like jquery, bootstrap etc. with typescript because with typescript you need typing to write code and later compile it.That's when we use declaration files .The extension of these file should be .d.ts .To describe the shape of libraries not written in TypeScript, we need to declare the API that the javascript library exposes. We call declarations that don’t define an implementation `ambient`.These files are just for typing purposes,code in these files does't get compiled nor it gets loaded into browser.
+Now the question arises is how to use existing javascript libraries like jquery, bootstrap etc. with typescript because with typescript you need typing to write code and later compile it.That's when we use declaration files. The extension of these file should be .d.ts . To describe the shape of libraries not written in TypeScript, we need to declare the API that the javascript library exposes. We call declarations that don’t define an implementation `ambient`. These files are just for typing purposes,code in these files does't get compiled nor it gets loaded into browser.
 
 Some interesting points related to decleration (.d.ts) files:
 
-1. Have to use `declare module module_name { ... }` not module module_name{ ... }.Because you are not writing a namespace but actually writing a ambient module which is just used for declaration purposes. This type of module which starts from declare is called `ambient module`.
+1. Have to use `declare module module_name { ... }` not module module_name{ ... }. Because you are not writing a namespace but actually writing a ambient module which is just used for declaration purposes. This type of module which starts from declare is called `ambient module`.
 
-2. Can't initialize anything in this file.As this file doesn't get compiled,you can't not use the initialized data in some other file.In the same way you can't create constructor in class in ambient modules.It is recommended to use interfaces in these module as you can't leverage the class functionality in these modules.
+2. Can't initialize anything in this file. As this file doesn't get compiled, you can't not use the initialized data in some other file. In the same way you can't create constructor in class in ambient modules. It is recommended to use interfaces in these module as you can't leverage the class functionality in these modules.
 
 3. You can write external modules too in this file but with point 2 restriction.
 
@@ -243,7 +243,7 @@ console.log(text.a);
 
 {% endhighlight %}
 
-Check, here we are using the typings of file3.d.ts in file2.ts using `reference path` . __Reference path can only be given in case of internal modules and ambient modules.__ If .d.ts file contains external module then you have to use `import {Type} from "filepath"` to use in other files.Check the example:
+Check, here we are using the typings of file3.d.ts in file2.ts using `reference path` . __Reference path can only be given in case of internal modules and ambient modules. __ If .d.ts file contains external module then you have to use `import {Type} from "filepath"` to use in other files.Check the example:
 
 
 file3.d.ts

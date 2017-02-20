@@ -10,12 +10,12 @@ comments: true
 excerpt: ""
 ---
 
-For this article you should be familiar with the term `socket`. In very general term i would say it's a way of bidirectional communication. Using http protocol you can send a request to server and server can respond on the same request but server can not send any data to client without a client request.Using socket client and server both can send messages to each other. Sockets are used in applications which needs instant messaging like chat application etc.
+For this article you should be familiar with the term `socket`.  In very general term i would say it's a way of bidirectional communication. Using http protocol you can send a request to server and server can respond on the same request but server can not send any data to client without a client request.Using socket client and server both can send messages to each other. Sockets are used in applications which needs instant messaging like chat application etc.
 
 
-__socket.io__ provide a simplistic way to interact with sockets. socket.io runs with node.js on server side.Please make sure you have node.js installed on your machine. 
+__socket.io__ provide a simplistic way to interact with sockets. socket.io runs with node.js on server side. Please make sure you have node.js installed on your machine. 
 
-Now for example purposes i am creating a node server which would be listening on port 80.There are two files, one is index.js which runs through node.js and other one is index.html which runs on client browser.For running the examples given in this blog, do the following steps:
+Now for example purposes i am creating a node server which would be listening on port 80. There are two files, one is index.js which runs through node.js and other one is index.html which runs on client browser.For running the examples given in this blog, do the following steps:
 
 1.Create a directory by any name.
 
@@ -124,7 +124,7 @@ hello from server
 
 
 
-In actual sockets there is no concept of namespaces. socket.io introduced this concept to provide a highlevel seperation layer between sockets.A socket can be a part of one namespace only.By default all the sockets connect to default namespace ('/') if you don't provide a custom namespace.
+In actual sockets there is no concept of namespaces. socket.io introduced this concept to provide a highlevel seperation layer between sockets. A socket can be a part of one namespace only.By default all the sockets connect to default namespace ('/') if you don't provide a custom namespace.
 
 __index.js__ 
 
@@ -163,7 +163,7 @@ chat_socket.on('a message', function (msg) {
 {% endhighlight %}
 
 
-Here client is trying to create socket connection with a custom namespace ('/chat') . After creating the socket in this namespace it triggers the 'connection' event on server.Then server is emiting a message first for the created socket and then for all the sockets present in that namespace.Later it tries to emit a message to default namespace but as no socket is present for default namespace,nothing happened.
+Here client is trying to create socket connection with a custom namespace ('/chat') . After creating the socket in this namespace it triggers the 'connection' event on server.Then server is emiting a message first for the created socket and then for all the sockets present in that namespace. Later it tries to emit a message to default namespace but as no socket is present for default namespace,nothing happened.
 
 
 `server logs:`  
@@ -181,7 +181,7 @@ message sent for all the sockets for chat namespace
 
 ## Rooms
 
-In a namespace you can create rooms. A socket can be the part of multiple rooms.Each socket in socket.io is identified by a random, unguessable, unique identifier Socket#id. For your convenience, each socket automatically joins a room identified by this id.Socket can join a room only through server .Client can send a message to server saying which room it should join and server can process the request accordingly.
+In a namespace you can create rooms. A socket can be the part of multiple rooms.Each socket in socket.io is identified by a random, unguessable, unique identifier Socket#id. For your convenience, each socket automatically joins a room identified by this id.Socket can join a room only through server. Client can send a message to server saying which room it should join and server can process the request accordingly.
 
 
 __index.js__
@@ -218,7 +218,7 @@ socket.on('msg_for_room1', function (msg) {
 
 {% endhighlight %}
 
-A socket can join the room using `join` function of Socket class.And server can send event to all sockets present in the room using io.to(room_name).emit(...).
+A socket can join the room using `join` function of Socket class. And server can send event to all sockets present in the room using io.to(room_name).emit(...).
 
 
 `server logs:`  

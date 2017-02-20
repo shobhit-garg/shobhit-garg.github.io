@@ -23,7 +23,7 @@ In HashMap.java, there is this decleration.
 transient Set<Map.Entry<K,V>> entrySet;
 {% endhighlight %}
 
-This Set stored all the Entry class objects.Entry class objects are the objects which stores key-value pair in HashMap.Entry class has fields [K key,V value,Map.Entry<K,V> next] etc. This diagram will give you a idea about how java implement HashMap and store key-values:
+This Set stored all the Entry class objects. Entry class objects are the objects which stores key-value pair in HashMap. Entry class has fields [K key,V value,Map.Entry<K,V> next] etc. This diagram will give you a idea about how java implement HashMap and store key-values:
 
 
 ![HashMap Implementation in Java]({{ site.url }}/assets/hashmap.jpg)
@@ -50,4 +50,4 @@ Iterator<Map.Entry<K,V>> it = set.iterator();
 
 __Usecase Example:__
 
-Suppose you are storing ArrayList as a Value(V) in HashMap.Now you need to sort all the ArrayList's stored in HashMap.You can do this via iterating over HasMap and get the Object of ArrayList then you can sort it.
+Suppose you are storing ArrayList as a Value(V) in HashMap. Now you need to sort all the ArrayList's stored in HashMap. You can do this via iterating over HasMap and get the Object of ArrayList then you can sort it.

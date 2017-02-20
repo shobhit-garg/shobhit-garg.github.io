@@ -10,9 +10,9 @@ share: true
 excerpt: ""
 ---
 
-In case of a single transation we can apply transation on one database.What if we need _transactions on multiple databases_? Rails supports nested transactions for this but before using it ,read about it carefully.
+In case of a single transation we can apply transation on one database. What if we need _transactions on multiple databases_?  Rails supports nested transactions for this but before using it ,read about it carefully.
 
-Suppose we have two databases A and B.You want to apply transactions on both the databases so that either two of these databases get updated together or nothing gets updated.
+Suppose we have two databases A and B. You want to apply transactions on both the databases so that either two of these databases get updated together or nothing gets updated.
 
 Case 1:
 
@@ -26,7 +26,7 @@ A.transaction do
 end
 {% endhighlight %}
 
-If you rollback the transaction this way,only the operations of database B are rolled back in this case becuase you are rollbacking the transactions of inner block.Other options are executed too.
+If you rollback the transaction this way, only the operations of database B are rolled back in this case becuase you are rollbacking the transactions of inner block.Other options are executed too.
 
 
 Case 2:
@@ -39,7 +39,7 @@ A.transaction do
 	raise ActiveRecord::Rollback if (some condition)
 end
 {% endhighlight %}
-If you rollback the transaction this way,only the operations of database A are rolled back because transaction block for B has alreday ended.
+If you rollback the transaction this way, only the operations of database A are rolled back because transaction block for B has alreday ended.
 
 Case 3:
 

@@ -10,7 +10,7 @@ comments: true
 excerpt: ""
 ---
 
-In Ruby a class itself is an instance of the Ruby class.
+In Ruby a class itself is an instance of the Ruby class. 
 AnyClassName.class  => Class
 
 Objects can also have methods that are independent of the parent class definition. They are called singleton methods and are stored on the metaclass of the object.When you declare a singleton method on an object, Ruby automatically creates a class to hold just that method. This class is called the 'metaclass' of the object.Whenever you send a message to the object, it first looks to see whether the method exists in its metaclass. If it is not there, it gets propagated to the actual class of the object and if it is not found there, the message traverses the inheritance hierarchy.

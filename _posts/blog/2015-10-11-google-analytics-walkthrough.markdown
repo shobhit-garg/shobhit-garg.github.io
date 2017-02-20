@@ -44,7 +44,7 @@ __Conversions:__ It's for goals and ecommerce about which i would be discussing 
 
 ## Account, Property , Views and Segments
 
-You can create an `account` on google analytics.There can be multiple `property` in an account. Each property has it's own `tracking code` and there is no relation between two properties. Generally people create two property one for web and other for app to keep the analytics separate.
+You can create an `account` on google analytics. There can be multiple `property` in an account. Each property has it's own `tracking code` and there is no relation between two properties. Generally people create two property one for web and other for app to keep the analytics separate.
 
 In each property there can be multiple `views`. Views are nothing but filtered results.Default view is 'All website data' for web. You can create other views like in which you can filter requests from some particular host, particular ISP , particular country etc. So like for a property we can have views like All Website Data , US Data, Europe Data , Asia data. So that you can analyze them separetly. Data starts populating for a view as you create it, means when you create a view it doesn't fetch data from other views.
 

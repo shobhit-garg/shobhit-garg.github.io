@@ -10,11 +10,11 @@ comments: true
 excerpt: ""
 ---
 
-When users try to access different domain than the one which served itself comes in the purview of CORS.For example if you are on www.geekdirt.com and you try to access some resource of www.otherdomain.com using XMLHttpRequest. Without the use of CORS, user is not allowed to access the resouce of other domain using XMLHttpRequest .
+When users try to access different domain than the one which served itself comes in the purview of CORS. For example if you are on www.geekdirt.com and you try to access some resource of www.otherdomain.com using XMLHttpRequest. Without the use of CORS, user is not allowed to access the resouce of other domain using XMLHttpRequest .
 
 __How it works?__
 
-With each HTTP request a header is sent to server which is called `request header`.On processing the request server also sends a header which is called `response header` . By sending some information in these headers you can allow cross origin access.Like by sending `Access-Control-Allow-Origin` , server can convey which origin is allowed to access the resource and by sending `Access-Control-Allow-Credentials` server can convey that it would be able to access client cookies or not.
+With each HTTP request a header is sent to server which is called `request header`. On processing the request server also sends a header which is called `response header` . By sending some information in these headers you can allow cross origin access.Like by sending `Access-Control-Allow-Origin` , server can convey which origin is allowed to access the resource and by sending `Access-Control-Allow-Credentials` server can convey that it would be able to access client cookies or not.
 
 
 ---------------------------------------------------------------------------
@@ -115,7 +115,7 @@ else
 
 ## Simple Request with Credentials
 
- By default, in cross-site XMLHttpRequest invocations, browsers don't send credentials/cookies.To send cookies along with request a specific flag has to be set on the XMLHttpRequest object when it is invoked which is `withCredentials = true` . Browser will reject any response that does not have the `Access-Control-Allow-Credentials: true` header, and not make the response available to the invoking web content.
+ By default, in cross-site XMLHttpRequest invocations, browsers don't send credentials/cookies. To send cookies along with request a specific flag has to be set on the XMLHttpRequest object when it is invoked which is `withCredentials = true` .  Browser will reject any response that does not have the `Access-Control-Allow-Credentials: true` header, and not make the response available to the invoking web content.
 
 __Java Script Code on Browser:__
 
@@ -239,14 +239,14 @@ else
 
 ## Preflighted Requests
 
-There were some limitations with Simple Requests which has been mentioned in Simple Request Section.
-So if you want to send other cross origin request you have to send a preflighted request.
+There were some limitations with Simple Requests which has been mentioned in Simple Request Section. 
+So if you want to send other cross origin request you have to send a preflighted request. 
 Preflighted Request uses methods other than GET, HEAD or POST.  Also, if POST is used to send request data with a Content-Type other than `application/x-www-form-urlencoded`, `multipart/form-data`, or `text/plain`, e.g. if the POST request sends an XML payload to the server using application/xml or text/xml, then the request is preflighted. Also you can send custom(non standard) HTTP header with preflight request.The methos which is used to send these type of request is `OPTION` .
 
 
 __Workflow:__
 
-In the preflight workflow first a request is sent to server asking the user to permit http method ,custom header etc. Server responds this request with a header with information like which http methods and which cutom headers are permitted.This response header has a expiry time attached with it.
+In the preflight workflow first a request is sent to server asking the user to permit http method, custom header etc. Server responds this request with a header with information like which http methods and which cutom headers are permitted. This response header has a expiry time attached with it. 
 That means only for that time you can send normal request to server with the allowed methods and header.Browser cache this header for that time and validate each request before sending it.
 
 
@@ -270,7 +270,7 @@ __Browser Javascript Code:__
 14.}
 
 {% endhighlight %}
-Here you can see that a post request is being send with content type application/xml that's why it's a preflighted request.Also a custom header 'X-PINGOTHER' is being sent with value 'pingpong' which is only allowed in preflighted requests.
+Here you can see that a post request is being send with content type application/xml that's why it's a preflighted request. Also a custom header 'X-PINGOTHER' is being sent with value 'pingpong' which is only allowed in preflighted requests.
 
 
 __Preflighted Request Header:__
@@ -428,7 +428,7 @@ else
 
 ---------------------------------------------------------------------------
 
-To read more about cookies visit [Cookies][cookies] .
+To read more about cookies visit [Cookies][cookies] . 
 To read cross domain communication with iframe visit [Cross domain communication with iframe][cross-domain-communication-with-iframe]  . 
 
 

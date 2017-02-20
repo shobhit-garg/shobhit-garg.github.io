@@ -59,7 +59,7 @@ puts flash.flag
 
 __Persist flash values against multiple actions:__
 
-Now suppose you have three actions say action1, action2 , action3.And you are calling one to another:
+Now suppose you have three actions say action1, action2 , action3. And you are calling one to another:
 
 {% highlight ruby %}
 def action1

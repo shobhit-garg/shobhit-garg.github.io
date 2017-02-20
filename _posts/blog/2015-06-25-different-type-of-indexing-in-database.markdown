@@ -11,7 +11,7 @@ excerpt: ""
 ---
 
 
-I suppose you might be aware of the concept of Database Indexing.If you are not, please read about how Indexes works.
+I suppose you might be aware of the concept of Database Indexing .If you are not, please read about how Indexes works. 
 In this post my main focus is to let you know the differences between different types of Indexes.
 
 
@@ -43,7 +43,7 @@ insert into people values ('3','1','1990');
 __Unique Indexes__ : 
 
 Unique indexes are the same as Normal indexes with one difference: all values of the indexed column(s) must only occur once.
-Unique indexes allow null values in it's columns if they allow null values.You can name it according to your choice .In the example i am using name my_uniq_index .
+Unique indexes allow null values in it's columns if they allow null values. You can name it according to your choice. In the example i am using name my_uniq_index .
 
 {% highlight ruby %}
 
@@ -78,7 +78,7 @@ insert into people values ('3','1','1');
 __Primary Keys/Indexes__ : 
 
 Primary keys are unique indexes that must be named PRIMARY.You may only have one primary key per table.
-If you are using AUTO_INCREMENT then that column must be defined as PRIMARY key.Unlike Unique key it doesn't allow NULL values.
+If you are using AUTO_INCREMENT then that column must be defined as PRIMARY key. Unlike Unique key it doesn't allow NULL values.
 
 {% highlight ruby %}
 

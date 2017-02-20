@@ -10,7 +10,7 @@ comments: true
 excerpt: ""
 ---
 
-Javascript has not been my strong area but currently i am working on `nodejs`.While working on that i got to know that nodejs follows `commonjs` module approach.So the question is what is this commonjs? But before starting that let me explain a few things :-
+Javascript has not been my strong area but currently i am working on `nodejs`. While working on that i got to know that nodejs follows `commonjs` module approach.So the question is what is this commonjs? But before starting that let me explain a few things :-
 
 
 How most developer write javascript code:
@@ -22,7 +22,7 @@ How most developer write javascript code:
 
 {% endhighlight %}
 
-or they write the same type of code in a file and include that file in html.Here they are polluting the global space.Because variable x is global now and any function might change it.Also it will be in the memory all the time.
+or they write the same type of code in a file and include that file in html. Here they are polluting the global space. Because variable x is global now and any function might change it. Also it will be in the memory all the time.
 
 
 
@@ -40,7 +40,7 @@ define(['dep1', 'dep2'], function (dep1, dep2) {
 
 {% endhighlight %}
 
-dep1 and dep2 are other modules which would be loaded before calling this.It follows asynchronous approach that means dep1 and dep2 would be loaded asynchronously.
+dep1 and dep2 are other modules which would be loaded before calling this. It follows asynchronous approach that means dep1 and dep2 would be loaded asynchronously.
 
 
 A typical `COMMONJS` module looks like this:
@@ -57,11 +57,11 @@ exports.add = add;
 
 {% endhighlight %}
 
-It includes require and exports statements.You must have seen this in nodejs if you have worked on it.It follows synchronous approach.
+It includes require and exports statements. You must have seen this in nodejs if you have worked on it.It follows synchronous approach.
 
 
 
-But the thing here is you can't run these modules directly through browser without an external library.That is where module loader like `requirejs` comes into picture. AMD modules can be loaded and run using requirejs directly. But to run commonjs modules,the most common approach is to put the commonjs code is this block:
+But the thing here is you can't run these modules directly through browser without an external library. That is where module loader like `requirejs` comes into picture. AMD modules can be loaded and run using requirejs directly. But to run commonjs modules,the most common approach is to put the commonjs code is this block:
 
 {% highlight javascript linenos %}
 define(function(require, exports, module) {

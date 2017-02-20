@@ -12,9 +12,9 @@ comments: true
 
 
 
-When I was trying to connect solr with database to index the documents directly i was getting different exceptions.I searched on web and found that there were many people who were facing the same type of issues.Finally after trying different approaches i got success in connecting solr to mysql database.
+When I was trying to connect solr with database to index the documents directly i was getting different exceptions. I searched on web and found that there were many people who were facing the same type of issues. Finally after trying different approaches i got success in connecting solr to mysql database.
 
-For connecting solr to database there are two jar plugins needed.One is  __solr-dataimporthandler-..\.jar__  and other one is __mysql-connector-java-..\.jar__ e.g. solr-dataimporthandler-extras-5.1.0.jar & mysql-connector-java-5.1.18-bin.jar. First one is used import the data from database and second one is used to connect the solr to mysql database.You can find first one already present in solr repository on location ".../solr-5.1.0/dist/". But you have to add the mysql connector yourself.You can download the connector from [here][mysql-connector] .
+For connecting solr to database there are two jar plugins needed. One is  __solr-dataimporthandler-..\.jar__  and other one is __mysql-connector-java-..\.jar__ e.g. solr-dataimporthandler-extras-5.1.0.jar & mysql-connector-java-5.1.18-bin.jar. First one is used import the data from database and second one is used to connect the solr to mysql database. You can find first one already present in solr repository on location ".../solr-5.1.0/dist/". But you have to add the mysql connector yourself.You can download the connector from [here][mysql-connector] .
 
 After download the connector jar, you need to place it in same dist folder. (You can place it anywhere and update the path of this file in solrconfig.xml but for the purpose of this post i am posting it in the same dist folder.)
 
@@ -34,7 +34,7 @@ Now you have to mention the location of these two jar files in solrconfig.xml . 
 {% endhighlight %}
 
 
-In solrconfig.xml you need to declare the config file location which holds the database connection settings and query.In my case i am naming it as __data-config.xml__ .You can define this in solrconfig.xml using:     
+In solrconfig.xml you need to declare the config file location which holds the database connection settings and query. In my case i am naming it as __data-config.xml__ . You can define this in solrconfig.xml using:     
 
 {% highlight ruby %}
 
@@ -173,7 +173,7 @@ __Directory structure of core__
 * dihexample/core.properties
 
 
-Seems like i have posted the complete core. You shouldn't get any problem while connecting solr to mysql database now.In case you get any problem.Please let me know through comments. I will try to help you.
+Seems like i have posted the complete core. You shouldn't get any problem while connecting solr to mysql database now. In case you get any problem.Please let me know through comments. I will try to help you.
 
 
 Now to importing data to solr you can use this command or trigger full-import through solr UI.

@@ -11,9 +11,9 @@ excerpt: ""
 ---
 
 
-OAuth is an open standard for authorization.It basically consists of 2 application : Client and Provider.
+OAuth is an open standard for authorization. It basically consists of 2 application : Client and Provider.
 
-Provider is an application which authorize the client application. Let's take an example: Currently you see many application/websites provide 'Login with facebook' facility.In this case Facebook is the provider and the application which is providing the 'login with facebook' facility is client. Provider stores the users credentials.
+Provider is an application which authorize the client application. Let's take an example: Currently you see many application/websites provide 'Login with facebook' facility. In this case Facebook is the provider and the application which is providing the 'login with facebook' facility is client. Provider stores the users credentials.
 User is called Resource Owner in Oauth. Because user owns all the resources.Like in case of facebook user owns the friend list,his information etc. 
 
 
@@ -41,19 +41,19 @@ Provider shares a client id and client secret with client.
 
 
 
-Token generally has a expiry timestamp.After that time token gets expired and you can't call an api of provider side.So you can get the new token using the same process.
+Token generally has a expiry timestamp. After that time token gets expired and you can't call an api of provider side. So you can get the new token using the same process.
 Sometimes provider provides a refresh token which is used to get the another active token when token gets expired.
 
 __Why Oauth is an authorization protocol not authentication?__
 
 OAuth says absolutely nothing about the user, nor does it say how the user proved their presence or even if they're still there. As far as an OAuth client is concerned, it asked for a token, got a token, and eventually used that token to access some API. It doesn't know anything about who authorized the application or if there was even a user at provider side at all. 
 
-The access token will generally be usable long after the user is no longer present(not logged in).In this case api calls would work but user would not be logged-in in provider app.Anyone can use this access token.So no authentiation is there.
+The access token will generally be usable long after the user is no longer present(not logged in). In this case api calls would work but user would not be logged-in in provider app. Anyone can use this access token. So no authentiation is there.
 
 
 __How can you use Oauth for authentication?__
 
-You can create a session at client side after getting the token from provider.From time to time you need to check the validity of token.If token is not valid you need to destroy the session or modify the session after fetching another active token .There is lot more you can do for implementing authentication.Oauth is not stopping you from modifying it.
+You can create a session at client side after getting the token from provider. From time to time you need to check the validity of token. If token is not valid you need to destroy the session or modify the session after fetching another active token. There is lot more you can do for implementing authentication.Oauth is not stopping you from modifying it.
 Infact you can create your own provider and with some extra functionality you can keep client in sync with provider. This is a good solution for implementing SSO.
 
 

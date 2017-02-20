@@ -100,7 +100,7 @@ master_secret = PRF(pre_master_secret,
 
 This `master_secret is used to generate different encryption and MAC keys` on both sides.
 
-If client wants to resume the previous session it can just send the Session ID in Step 1.In that case server replies with a Server.random and both can generate master_secret on their respective machines. In this case client doesn't need to send the pre_master_secret to server again and client doesn't need to validate server certificates.
+If client wants to resume the previous session it can just send the Session ID in Step 1. In that case server replies with a Server.random and both can generate master_secret on their respective machines. In this case client doesn't need to send the pre_master_secret to server again and client doesn't need to validate server certificates.
 
 
 
@@ -108,7 +108,7 @@ If client wants to resume the previous session it can just send the Session ID i
 
 __Why does the SSL/TLS handshake have a client and server random?__
 
-Say someone try to replay the attack, he can send the same encrypted packets to server. So in that case pre_master_secret and Client.random would be same. Server would generate it's master_secret after that using Server.random and Client.random. That means it's master_secret would be different than the one which client has used because in the replay case Client.random would be same as same packets are being forwarded but Server.random would not be. So if someone forwards the same packets, server can't validate and decrypt the data as it had been generated using master_secret of other client.
+Say someone try to replay the attack, he can send the same encrypted packets to server. So in that case pre_master_secret and Client.random would be same. Server would generate it's master_secret after that using Server.random and Client.random. That means it's master_secret would be different than the one which client has used because in the replay case Client.random would be same as same packets are being forwarded but Server.random would not be. So if someone forwards the same packets,  server can't validate and decrypt the data as it had been generated using master_secret of other client.
 
 Say someone replays the same packets just after the transfer of original packets without doing the handshake. In that case too it would not work as with every packet sent to server it uses sequence number which changes according to previous packets so server would not respond to the replay request.
 

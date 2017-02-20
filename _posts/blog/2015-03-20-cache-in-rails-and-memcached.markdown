@@ -22,7 +22,7 @@ Memcached uses a client–server architecture. The servers maintain a key–valu
 If memory gets full it uses LRU(least recently used) method to preserve keys and delete keys.
 
 
-* It uses Consistent Hashing so that all the memcached-servers get the equal load of cached data. You can read more about consistent hashing [here][memcached].Servers are dumb- they don't know about each other.
+* It uses Consistent Hashing so that all the memcached-servers get the equal load of cached data. You can read more about consistent hashing [here][memcached]. Servers are dumb- they don't know about each other.
 
 
 __Caching in Rails:__

@@ -13,10 +13,10 @@ excerpt: ""
 
 __REDIS__
 
- It is basically a key-value cache and store.The name Redis means REmote DIctionary Server.
+ It is basically a key-value cache and store. The name Redis means REmote DIctionary Server.
 
 
-Key should be a string like "user:1000:followers" and value can be of many data structures like hash,list,set etc.Unlike __memcache__ in which key and value can be strings only.
+Key should be a string like "user:1000:followers" and value can be of many data structures like hash, list, set etc. Unlike __memcache__ in which key and value can be strings only.
 
 Redis does not use SQL to inspect its data, instead having its own command set to read and process the keys. It provides a command-line interface, redis-cli, to interactively view and manipulate the dataset.
 
@@ -71,7 +71,7 @@ Each job in Resque is a hash serialized as a JSON string (remember data structur
 
 As mentioned resque uses redis list data structure. So many values of the JSON type mentioned above can be put in a single queue.
 
-In class we define a perform method which gets called when resque worker runs the job.As jobs in resque contains class name and parameters so before running resque idenfities the class and call the perform method based on parameters.
+In class we define a perform method which gets called when resque worker runs the job. As jobs in resque contains class name and parameters so before running resque idenfities the class and call the perform method based on parameters.
 
 To enqueue a job in Resque you need to do :
 
@@ -81,7 +81,7 @@ Resque.enqueue(ClassName,Parameters)
 
 {% endhighlight %}
 
-This creates a job in JSON format on redis server.Jobs are en-queued (the Redis RPUSH command to push onto the right side of the list) on the list, and workers de-queue a job (LPOP to pop off the left side of the list) to process it. As these operations are atomic, queuers and workers do not have to worry about locking and synchronizing access. Data structures are not nested in Redis, and each element of the list (or set, hash, etc.) must be a string.
+This creates a job in JSON format on redis server. Jobs are en-queued (the Redis RPUSH command to push onto the right side of the list) on the list, and workers de-queue a job (LPOP to pop off the left side of the list) to process it. As these operations are atomic, queuers and workers do not have to worry about locking and synchronizing access. Data structures are not nested in Redis, and each element of the list (or set, hash, etc.) must be a string.
 
 In class you can put @queue = queue_name which decides in which queue job should be put.
 

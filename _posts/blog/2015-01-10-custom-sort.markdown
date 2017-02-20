@@ -10,8 +10,8 @@ comments: true
 excerpt: ""
 ---
 
-We can sort the array of integers in ruby easily,just by using the sort function.But what if we want to __sort array of arrays or array of objects__ etc.
-For this we need some thing where we can provide our sorting conditions.Ruby provide this functionality using __sort__ and __sort_by__ functions.
+We can sort the array of integers in ruby easily, just by using the sort function. But what if we want to __sort array of arrays or array of objects__ etc.
+For this we need some thing where we can provide our sorting conditions. Ruby provide this functionality using __sort__ and __sort_by__ functions.
 
 Lets take a example of array of arrays:
 {% highlight ruby %}
@@ -20,7 +20,7 @@ arr = [[1,4,3],[2,1,7],[3,2,8]]
 
 ## Using sort:
 
-Now you want to sort this array in the __ascending order of the middle element of the inner arrays__.All you need to do is:
+Now you want to sort this array in the __ascending order of the middle element of the inner arrays__. All you need to do is:
 
 {% highlight ruby %}
 arr.sort! do |x,y| 
@@ -34,7 +34,7 @@ Output : [[2, 1, 7], [3, 2, 8], [1, 4, 3]]
 {% endhighlight %}
 
 
-Here x,y are the elements of arrays like '[1,4,3]' (a element of array) and using x[1] and y[1] we are comparing the middle elements.Now lets look at opeartor <=> :
+Here x,y are the elements of arrays like '[1,4,3]' (a element of array) and using x[1] and y[1] we are comparing the middle elements. Now lets look at opeartor <=> :
 
 {% highlight ruby %}
 2 <=> 5 # return -1 because 2 is smaller than 5

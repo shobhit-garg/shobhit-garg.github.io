@@ -10,7 +10,7 @@ comments: true
 excerpt: ""
 ---
 
-We anaylze production logs time to time.There are many gems/tools available for it.But i found [request-log-analyzer][rla] a good tool to use.To install this gem use 
+We anaylze production logs time to time. There are many gems/tools available for it. But i found [request-log-analyzer][rla] a good tool to use. To install this gem use 
 {% highlight ruby %}
 gem install request-log-analyzer
 {% endhighlight %}
@@ -39,11 +39,11 @@ This generates a detailed report having these informations:
 
 __Custom Formats:__
 
-Now say, You log the data when you make an api call from your app.Your log format is like this:
+Now say, You log the data when you make an api call from your app. Your log format is like this:
 
 Calling API [api_name] at [time]
 
-Now you want to check how many times a particular api is being called.Request Log Anaylser provides custom formats to anaylse this type of logs.
+Now you want to check how many times a particular api is being called. Request Log Anaylser provides custom formats to anaylse this type of logs.
 
 Create a file named [filename].rb and paste this code into our file.
 {% highlight ruby %}

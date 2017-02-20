@@ -12,7 +12,7 @@ excerpt: ""
 
 ## Transactions
 
-Transactions are required for atomicity.If one part of the transaction fails, the entire transaction fails, and the database state is left unchanged.
+Transactions are required for atomicity. If one part of the transaction fails, the entire transaction fails, and the database state is left unchanged.
 
 * START TRANSACTION or BEGIN start a new transaction
 
