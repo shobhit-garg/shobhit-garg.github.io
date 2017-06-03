@@ -32,15 +32,23 @@ YARN was introduced in Hadoop 2.0. In Hadoop 1.0 a map-reduce job is run through
 YARN has basically these component: 
 
 
-__Resource Manager:__ It has two main component: Job Scheduler and Application Manager. Job of scheduler is allocate the resources with the given scheduling method and job of Application Manager is to monitor the progress of submitted application like map-reduce job. It has all the info of available resources. 
+__Resource Manager:__ 
 
-__Node Manager:__ For each node there is a node manager running. It maintains the available resources on that particular node and notifies Resource Manager about the available resources when it starts. It launches the containers by providing the needed resources (memory, cpu etc.). These resources are allocated to container by Resource Manager.
+It has two main component: Job Scheduler and Application Manager. Job of scheduler is allocate the resources with the given scheduling method and job of Application Manager is to monitor the progress of submitted application like map-reduce job. It has all the info of available resources. 
+
+__Node Manager:__ 
+
+For each node there is a node manager running. It maintains the available resources on that particular node and notifies Resource Manager about the available resources when it starts. It launches the containers by providing the needed resources (memory, cpu etc.). These resources are allocated to container by Resource Manager.
 It manages the containers during it's lifetime. It sends heartbeat to Resource Manager to let it know that it is alive. In case Resource Manager doesn't receive heartbeat from Node Manager, it marks that node as failure.
 
-__Application Master:__ It carries out the execution of job using different components of YARN. It is spawned under Node Manager under the instructions of Resource Manager . One Application master is launched for each job. For resource allocation it talks to Resource Manager, for launching or stopping a container it talks to Node Manager. It aggregates the status of task from different nodes and notifies the status of job to client as client polls on it. It also sends periodic heartbeat to Resource Manager to make sure Resource manager can launch a new Application Master in case of failure.
+__Application Master:__ 
+
+It carries out the execution of job using different components of YARN. It is spawned under Node Manager under the instructions of Resource Manager . One Application master is launched for each job. For resource allocation it talks to Resource Manager, for launching or stopping a container it talks to Node Manager. It aggregates the status of task from different nodes and notifies the status of job to client as client polls on it. It also sends periodic heartbeat to Resource Manager to make sure Resource manager can launch a new Application Master in case of failure.
 
 
-__Container:__ It is started by Node Manager. It consists of resources like memory, cpu core etc. For running a map or reduce task, Application Master asks Resource Manager for resources using which a container can be run. 
+__Container:__ 
+
+It is started by Node Manager. It consists of resources like memory, cpu core etc. For running a map or reduce task, Application Master asks Resource Manager for resources using which a container can be run. 
 
 
 ## Steps involved in running a job using YARN:
