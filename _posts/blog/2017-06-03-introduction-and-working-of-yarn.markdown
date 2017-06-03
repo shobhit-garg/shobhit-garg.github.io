@@ -194,7 +194,10 @@ Some settings are given by the client in the job configuration, like:
 You can check the progress of a Job through web interface on `http://127.0.0.1:8088` . You have to expose this port if you are running hadoop through docker. Please check the previous post for this.
 
 ![Diagram]({{ site.url }}/assets/hadoop_cluster.png)
-<u><br>Hadoop cluster web interface</u>
+<br><br>
+
+![Diagram]({{ site.url }}/assets/hadoop_cluster_app_view.png)
+<u><br><br> Hadoop cluster web interface</u>
 
 Important Links:
 
