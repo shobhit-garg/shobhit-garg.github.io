@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduction of Hadoop and running a map-reduce program"
+title:  "Hadoop-1: Introduction of Hadoop and running a map-reduce program"
 date:   2017-04-09
 categories: blog
 tags: [docker,server,hadoop,bigdata,mapreduce]
@@ -13,7 +13,6 @@ excerpt: ""
 
 
 In this post i am giving a brief overview of Hadoop. Extensive overview like how it works and what makes it highly distributive and fault tolerant will be given in later posts. Target of this post is to make you comfortable in running your first Hadoop job.
-
 
 ## Hadoop Basics
 
@@ -342,10 +341,15 @@ Now you can access hdfs file system through web on 127.0.0.1:50070.
 <u><br><br> Web View HDFS </u>
 
 
+__Important Links:__
+
+[Hadoop-2: Introduction of YARN and how it works?][hadoop-part-2]
+
+
 [sequenceiq-hadoop-docker]: https://github.com/sequenceiq/hadoop-docker
 [docker-intro]: {{site.url}}/blog/docker-and-running-it-on-mac/
 [hadoop-examples]: https://github.com/facebookarchive/hadoop-20/tree/master/src/examples/org/apache/hadoop/examples
-
+[hadoop-part-2]: {{site.url}}/blog/introduction-and-working-of-yarn/
 
 
 
