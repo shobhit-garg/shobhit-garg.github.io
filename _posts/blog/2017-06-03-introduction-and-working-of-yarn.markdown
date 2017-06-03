@@ -54,7 +54,7 @@ It is started by Node Manager. It consists of resources like memory, cpu core et
 ## Steps involved in running a job using YARN:
 
 ![Diagram]({{ site.url }}/assets/yarn.png)
-<u><br>Anatomy of a YARN Application Run (from "Hadoop: The Definitive Guide" by Tom White):</u>
+<u><br><br><br>Anatomy of a YARN Application Run (from "Hadoop: The Definitive Guide" by Tom White):</u>
 
 (Steps numbers given in diagram are different so don't get confused.)
 
