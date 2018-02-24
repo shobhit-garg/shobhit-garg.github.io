@@ -21,7 +21,7 @@ __How it works?__
 
 Provider shares a client id and client secret with client.
 
-1.For authorization client sends client id and secret to provider. 
+1.For authorization client sends client id to provider. 
 
 2.Provider verifies the client data.
 
@@ -31,7 +31,7 @@ Provider shares a client id and client secret with client.
 
 5.This code is retured to client on callback url.
 
-6.Client then sends this code to provider.
+6.Client then sends this code to provider along with client secret which is stored on server.
 
 7.Provider generate a token and this token is sent back to a defined url.
 
